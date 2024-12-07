@@ -343,7 +343,7 @@ if they are present.
 class TwGls_Map(FeatureMap):
     def __init__(self, glosser=None):
         super().__init__(glosser)
-        self.lemmatizer = spacy.load("en_core_web_md")
+        self.lemmatizer = spacy.load("en_core_web_sm")
 
     def get_translation(self, igt):
         return self._parent.get_translation(igt)
