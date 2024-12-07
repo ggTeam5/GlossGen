@@ -51,6 +51,8 @@ class IgtGlosser:
         return len(self.xc_igts)
 
     def load_corpus(self, xigtcorpus):
+        print("------------------------------------------")
+        print(xigtcorpus,xigtcorpus.igts)
         self.xc_igts = xigtcorpus.igts
         sys.stderr.write("Corpus size t=0: " + str(len(self.xc_igts)) + "\n")
         nonempty_igt = set()
