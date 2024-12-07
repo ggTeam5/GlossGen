@@ -1,0 +1,247 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2056-8" doc-id="2056" line-range="99-102" tag-types="M+AC+LN L G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="prq" xsi:type="olac:language">Perene Asheninca</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="99" tag="M+AC+LN">  (4) Perené Asheninca (Reed &amp; Payne 1986: 330)</item>
+      <item id="r2" line="100" tag="L">      a. paita p-ants-i-ri</item>
+      <item id="r3" line="101" tag="G">          what 2-do-NONFUT-REL</item>
+      <item id="r4" line="102" tag="T">          `what are you doing?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="99" tag="M+AC+LN">(4) Perené Asheninca (Reed &amp; Payne 1986: 330)</item>
+      <item id="c2" alignment="r2" line="100" tag="L">a. paita p-ants-i-ri</item>
+      <item id="c3" alignment="r3" line="101" tag="G">    what 2-do-NONFUT-REL</item>
+      <item id="c4" alignment="r4" line="102" tag="T">    `what are you doing?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="99" tag="M+AC+LN">(4) Perené Asheninca (Reed &amp; Payne 1986: 330)</item>
+      <item id="n2" alignment="c2" line="100" tag="L">paita p-ants-i-ri</item>
+      <item id="n3" alignment="c3" line="101" tag="G"> what 2-do-NONFUT-REL</item>
+      <item id="n4" alignment="c4" line="102" tag="T">what are you doing?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:5]" />
+      <item id="w2" segmentation="p1[6:17]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1" />
+      <item id="m2" segmentation="w2[0:1]" />
+      <item id="m3" segmentation="w2[2:6]" />
+      <item id="m4" segmentation="w2[7:8]" />
+      <item id="m5" segmentation="w2[9:11]" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <item id="g1" alignment="m1" content="gw1" />
+      <item id="g2" alignment="m2" content="gw2[0:1]" />
+      <item id="g3" alignment="m3" content="gw2[2:4]" />
+      <item id="g4" alignment="m4" content="gw2[5:11]" />
+      <item id="g5" alignment="m5" content="gw2[12:15]" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n3[1:5]" />
+      <item id="gw2" alignment="w2" content="n3[6:21]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">VERB</item>
+    </tier>
+    <tier id="w-ps" type="phrase-structure" alignment="w" children="w-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="projection" projected-from="tw-ps" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ps1" alignment="w1">WP</item>
+      <item id="w-ps2" alignment="w2">VBG</item>
+      <item id="w-ps3" children="w-ps4">ROOT</item>
+      <item id="w-ps4" children="w-ps5 w-ps6">SBARQ</item>
+      <item id="w-ps5" children="w-ps1">WHNP</item>
+      <item id="w-ps6" children="w-ps7">SQ</item>
+      <item id="w-ps7" children="w-ps2">VP</item>
+    </tier>
+    <tier id="w-ds" type="dependencies" dep="w" head="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="projection" projected-from="tw-ds" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ds1" dep="w2">root</item>
+      <item id="w-ds2" dep="w1" head="w2">dobj</item>
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:8]" />
+      <item id="tw3" segmentation="t1[9:12]" />
+      <item id="tw4" segmentation="t1[13:18]" />
+      <item id="tw5" segmentation="t1[18:19]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBP</item>
+      <item id="tw-ps3" alignment="tw3">PRP</item>
+      <item id="tw-ps4" alignment="tw4">VBG</item>
+      <item id="tw-ps5" alignment="tw5">.</item>
+      <item id="tw-ps6" children="tw-ps7">ROOT</item>
+      <item id="tw-ps7" children="tw-ps8 tw-ps9 tw-ps5">SBARQ</item>
+      <item id="tw-ps8" children="tw-ps1">WHNP</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10 tw-ps11">SQ</item>
+      <item id="tw-ps10" children="tw-ps3">NP</item>
+      <item id="tw-ps11" children="tw-ps4">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw4">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw4">dobj</item>
+      <item id="tw-ds3" dep="tw2" head="tw4">aux</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">nsubj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw4" target="g3" />
+    </tier>
+  </igt>
+  <igt id="igt2056-9" doc-id="2056" line-range="103-105" tag-types="L G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="prq" xsi:type="olac:language">Perene Asheninca</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="103" tag="L">      b. ninka pok-atsh-i-ne</item>
+      <item id="r2" line="104" tag="G">          who come-STAT-FUT-REL</item>
+      <item id="r3" line="105" tag="T">          `who is coming?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="103" tag="L">b. ninka pok-atsh-i-ne</item>
+      <item id="c2" alignment="r2" line="104" tag="G">    who come-STAT-FUT-REL</item>
+      <item id="c3" alignment="r3" line="105" tag="T">    `who is coming?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="103" tag="L">ninka pok-atsh-i-ne</item>
+      <item id="n2" alignment="c2" line="104" tag="G"> who come-STAT-FUT-REL</item>
+      <item id="n3" alignment="c3" line="105" tag="T">who is coming?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:5]" />
+      <item id="w2" segmentation="p1[6:19]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1" />
+      <item id="m2" segmentation="w2[0:3]" />
+      <item id="m3" segmentation="w2[4:8]" />
+      <item id="m4" segmentation="w2[9:10]" />
+      <item id="m5" segmentation="w2[11:13]" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <item id="g1" alignment="m1" content="gw1" />
+      <item id="g2" alignment="m2" content="gw2[0:4]" />
+      <item id="g3" alignment="m3" content="gw2[5:9]" />
+      <item id="g4" alignment="m4" content="gw2[10:13]" />
+      <item id="g5" alignment="m5" content="gw2[14:17]" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[1:4]" />
+      <item id="gw2" alignment="w2" content="n2[5:22]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">VERB</item>
+    </tier>
+    <tier id="w-ps" type="phrase-structure" alignment="w" children="w-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="projection" projected-from="tw-ps" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ps1" alignment="w1">WP</item>
+      <item id="w-ps2" alignment="w2">VBG</item>
+      <item id="w-ps3" children="w-ps4">ROOT</item>
+      <item id="w-ps4" children="w-ps5 w-ps6">SBARQ</item>
+      <item id="w-ps5" children="w-ps1">WHNP</item>
+      <item id="w-ps6" children="w-ps7">SQ</item>
+      <item id="w-ps7" children="w-ps2">VP</item>
+    </tier>
+    <tier id="w-ds" type="dependencies" dep="w" head="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="projection" projected-from="tw-ds" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ds1" dep="w2">root</item>
+      <item id="w-ds2" dep="w1" head="w2">nsubj</item>
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:6]" />
+      <item id="tw3" segmentation="t1[7:13]" />
+      <item id="tw4" segmentation="t1[13:14]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBZ</item>
+      <item id="tw-ps3" alignment="tw3">VBG</item>
+      <item id="tw-ps4" alignment="tw4">.</item>
+      <item id="tw-ps5" children="tw-ps6">ROOT</item>
+      <item id="tw-ps6" children="tw-ps7 tw-ps8 tw-ps4">SBARQ</item>
+      <item id="tw-ps7" children="tw-ps1">WHNP</item>
+      <item id="tw-ps8" children="tw-ps2 tw-ps9">SQ</item>
+      <item id="tw-ps9" children="tw-ps3">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw3">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw3">nsubj</item>
+      <item id="tw-ds3" dep="tw2" head="tw3">aux</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:18:03" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw3" target="g2" />
+    </tier>
+  </igt>
+</xigt-corpus>

@@ -1,0 +1,130 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2149-13" doc-id="2149" line-range="1428-1430" tag-types="L+LN+DB G+DB T+DB">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="arc" xsi:type="olac:language">Biblical Aramaic</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1428" tag="L+LN+DB">  Biblical Aramaic      ?ela@h-a@                  ?ela@h(*-a@) s&amp;´majj-a@</item>
+      <item id="r2" line="1429" tag="G+DB">                        God-ART                    God(-ART) Heaven-ART</item>
+      <item id="r3" line="1430" tag="T+DB">                        '(the) God'                'the God of (the) Heaven'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1428" tag="L+LN+DB">Biblical Aramaic      ?ela@h-a@                  ?ela@h(*-a@) s&amp;´majj-a@</item>
+      <item id="c2" alignment="r2" line="1429" tag="G+DB">                      God-ART                    God(-ART) Heaven-ART</item>
+      <item id="c3" alignment="r3" line="1430" tag="T+DB">                      '(the) God'                'the God of (the) Heaven'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="?" line="1428" tag="L+DB">ela@h-a@                  ?ela@h(*-a@) s&amp;´majj-a@</item>
+      <item id="n2" alignment="c1" line="1428" tag="M+LN">Biblical Aramaic</item>
+      <item id="n3" alignment="c2" line="1429" tag="G+DB">God-ART                    God(-ART) Heaven-ART</item>
+      <item id="n4" alignment="c3" line="1430" tag="T+DB">(the) God'                'the God of (the) Heaven</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="?" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:8]" />
+      <item id="w2" segmentation="p1[26:27]" />
+      <item id="w3" segmentation="p1[27:32]" />
+      <item id="w4" segmentation="p1[32:33]" />
+      <item id="w5" segmentation="p1[33:37]" />
+      <item id="w6" segmentation="p1[37:38]" />
+      <item id="w7" segmentation="p1[39:49]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[1:4]" />
+      <item id="tw3" segmentation="t1[4:5]" />
+      <item id="tw4" segmentation="t1[6:10]" />
+      <item id="tw5" segmentation="t1[26:30]" />
+      <item id="tw6" segmentation="t1[31:34]" />
+      <item id="tw7" segmentation="t1[35:37]" />
+      <item id="tw8" segmentation="t1[38:39]" />
+      <item id="tw9" segmentation="t1[39:42]" />
+      <item id="tw10" segmentation="t1[42:43]" />
+      <item id="tw11" segmentation="t1[44:50]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:09" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">DT</item>
+      <item id="tw-ps3" alignment="tw3">NNP</item>
+      <item id="tw-ps4" alignment="tw4">NNP</item>
+      <item id="tw-ps5" alignment="tw5">NNP</item>
+      <item id="tw-ps6" alignment="tw6">NNP</item>
+      <item id="tw-ps7" alignment="tw7">IN</item>
+      <item id="tw-ps8" alignment="tw8">NNP</item>
+      <item id="tw-ps9" alignment="tw9">DT</item>
+      <item id="tw-ps10" alignment="tw10">NNP</item>
+      <item id="tw-ps11" alignment="tw11">NNP</item>
+      <item id="tw-ps12" children="tw-ps13">ROOT</item>
+      <item id="tw-ps13" children="tw-ps14 tw-ps15">FRAG</item>
+      <item id="tw-ps14" children="tw-ps1">NP</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps20">NP</item>
+      <item id="tw-ps16" children="tw-ps17 tw-ps18">NP</item>
+      <item id="tw-ps17" children="tw-ps2 tw-ps3 tw-ps4 tw-ps5 tw-ps6">NP</item>
+      <item id="tw-ps18" children="tw-ps7 tw-ps19">PP</item>
+      <item id="tw-ps19" children="tw-ps8">NP</item>
+      <item id="tw-ps20" children="tw-ps9 tw-ps10 tw-ps11">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:09" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw1">root</item>
+      <item id="tw-ds2" dep="tw6" head="tw1">dep</item>
+      <item id="tw-ds3" dep="tw2" head="tw6">det</item>
+      <item id="tw-ds4" dep="tw3" head="tw6">compound</item>
+      <item id="tw-ds5" dep="tw4" head="tw6">compound</item>
+      <item id="tw-ds6" dep="tw5" head="tw6">compound</item>
+      <item id="tw-ds7" dep="tw8" head="tw6">nmod:of</item>
+      <item id="tw-ds8" dep="tw7" head="tw8">case</item>
+      <item id="tw-ds9" dep="tw11" head="tw6">dep</item>
+      <item id="tw-ds10" dep="tw9" head="tw11">det</item>
+      <item id="tw-ds11" dep="tw10" head="tw11">compound</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:09" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw4" target="g3" />
+      <item id="a2" source="tw6" target="g1" />
+      <item id="a3" source="tw11" target="g5" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:40:09" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[0:7]" />
+      <item id="gw2" content="n3[27:36]" />
+      <item id="gw3" content="n3[37:47]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:09" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">NOUN</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:40:09" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1[0:3]" />
+      <item id="g2" content="gw1[4:7]" />
+      <item id="g3" content="gw2[0:3]" />
+      <item id="g4" content="gw2[5:8]" />
+      <item id="g5" content="gw3[0:6]" />
+      <item id="g6" content="gw3[7:10]" />
+    </tier>
+  </igt>
+</xigt-corpus>

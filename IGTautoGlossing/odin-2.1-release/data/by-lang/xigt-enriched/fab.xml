@@ -1,0 +1,248 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3648-4" doc-id="3648" line-range="113-117" tag-types="M+AC+LN L G+CR G+CR T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="fab" xsi:type="olac:language">Fa D'Ambu</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="113" tag="M+AC+LN">  Fa d'Ambu (Post to appear, cited after Bruyn et al. 1999:330)</item>
+      <item id="r2" line="114" tag="L">  (6) Malía da     pe-d'eli      tabaku.</item>
+      <item id="r3" line="115" tag="G+CR">         Maria give              father-3                 tobacco</item>
+      <item id="r4" line="116" tag="G+CR">                                             SG</item>
+      <item id="r5" line="117" tag="T">         'Maria gives (the) tobacco to her father.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="113" tag="M+AC+LN">Fa d'Ambu (Post to appear, cited after Bruyn et al. 1999:330)</item>
+      <item id="c2" alignment="r2" line="114" tag="L">(6) Malía da     pe-d'eli      tabaku.</item>
+      <item id="c3" alignment="r3" line="115 116" tag="G">       Maria give              father-3    SG           tobacco</item>
+      <item id="c4" alignment="r5" line="117" tag="T">       'Maria gives (the) tobacco to her father.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="113" tag="M+AC+LN">Fa d'Ambu (Post to appear, cited after Bruyn et al. 1999:330)</item>
+      <item id="n2" alignment="c2" line="114" tag="L">Malía da     pe-d'eli      tabaku.</item>
+      <item id="n3" alignment="c3" line="115 116" tag="G">   Maria give              father-3    SG           tobacco</item>
+      <item id="n4" alignment="c4" line="117" tag="T">Maria gives (the) tobacco to her father.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:5]" />
+      <item id="w2" segmentation="p1[6:8]" />
+      <item id="w3" segmentation="p1[13:21]" />
+      <item id="w4" segmentation="p1[27:33]" />
+      <item id="w5" segmentation="p1[33:34]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:5]" />
+      <item id="tw2" segmentation="t1[6:11]" />
+      <item id="tw3" segmentation="t1[12:13]" />
+      <item id="tw4" segmentation="t1[13:16]" />
+      <item id="tw5" segmentation="t1[16:17]" />
+      <item id="tw6" segmentation="t1[18:25]" />
+      <item id="tw7" segmentation="t1[26:28]" />
+      <item id="tw8" segmentation="t1[29:32]" />
+      <item id="tw9" segmentation="t1[33:39]" />
+      <item id="tw10" segmentation="t1[39:40]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBZ</item>
+      <item id="tw-ps3" alignment="tw3">JJ</item>
+      <item id="tw-ps4" alignment="tw4">DT</item>
+      <item id="tw-ps5" alignment="tw5">JJ</item>
+      <item id="tw-ps6" alignment="tw6">NN</item>
+      <item id="tw-ps7" alignment="tw7">TO</item>
+      <item id="tw-ps8" alignment="tw8">PRP$</item>
+      <item id="tw-ps9" alignment="tw9">NN</item>
+      <item id="tw-ps10" alignment="tw10">.</item>
+      <item id="tw-ps11" children="tw-ps12">ROOT</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps14 tw-ps10">S</item>
+      <item id="tw-ps13" children="tw-ps1">NP</item>
+      <item id="tw-ps14" children="tw-ps2 tw-ps15 tw-ps16">VP</item>
+      <item id="tw-ps15" children="tw-ps3 tw-ps4 tw-ps5 tw-ps6">NP</item>
+      <item id="tw-ps16" children="tw-ps7 tw-ps17">PP</item>
+      <item id="tw-ps17" children="tw-ps8 tw-ps9">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw6" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw6">amod</item>
+      <item id="tw-ds5" dep="tw4" head="tw6">det</item>
+      <item id="tw-ds6" dep="tw5" head="tw6">amod</item>
+      <item id="tw-ds7" dep="tw9" head="tw2">nmod:to</item>
+      <item id="tw-ds8" dep="tw7" head="tw9">case</item>
+      <item id="tw-ds9" dep="tw8" head="tw9">nmod:poss</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw2" target="g2" />
+      <item id="a3" source="tw6" target="g6" />
+      <item id="a4" source="tw9" target="g3" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:06" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[3:8]" />
+      <item id="gw2" content="n3[9:13]" />
+      <item id="gw3" content="n3[27:35]" />
+      <item id="gw4" content="n3[39:41]" />
+      <item id="gw5" content="n3[52:59]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">NOUN</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:06" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2" />
+      <item id="g3" content="gw3[0:6]" />
+      <item id="g4" content="gw3[7:8]" />
+      <item id="g5" content="gw4" />
+      <item id="g6" content="gw5" />
+    </tier>
+  </igt>
+  <igt id="igt3648-15" doc-id="3648" line-range="197-201" tag-types="M+AC+LN L G+CR G+CR T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="fab" xsi:type="olac:language">Fa D'Ambu</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="197" tag="M+AC+LN">  Fa d'Ambu (cited after Bruyn et al. 1999:331)</item>
+      <item id="r2" line="198" tag="L">  (17) Amu da        wan kuzu da           bo.</item>
+      <item id="r3" line="199" tag="G+CR">         1             give         ART         thing       give         2</item>
+      <item id="r4" line="200" tag="G+CR">             SG                                                              SG</item>
+      <item id="r5" line="201" tag="T">         'I gave you something.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="197" tag="M+AC+LN">Fa d'Ambu (cited after Bruyn et al. 1999:331)</item>
+      <item id="c2" alignment="r2" line="198" tag="L">(17) Amu da        wan kuzu da           bo.</item>
+      <item id="c3" alignment="r3" line="199 200" tag="G">       1   SG        give         ART         thing       give         2   SG</item>
+      <item id="c4" alignment="r5" line="201" tag="T">       'I gave you something.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="197" tag="M+AC+LN">Fa d'Ambu (cited after Bruyn et al. 1999:331)</item>
+      <item id="n2" alignment="c2" line="198" tag="L">Amu da        wan kuzu da           bo.</item>
+      <item id="n3" alignment="c3" line="199 200" tag="G">  1   SG        give         ART         thing       give         2   SG</item>
+      <item id="n4" alignment="c4" line="201" tag="T">I gave you something.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:3]" />
+      <item id="w2" segmentation="p1[4:6]" />
+      <item id="w3" segmentation="p1[14:17]" />
+      <item id="w4" segmentation="p1[18:22]" />
+      <item id="w5" segmentation="p1[23:25]" />
+      <item id="w6" segmentation="p1[36:38]" />
+      <item id="w7" segmentation="p1[38:39]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[2:6]" />
+      <item id="tw3" segmentation="t1[7:10]" />
+      <item id="tw4" segmentation="t1[11:20]" />
+      <item id="tw5" segmentation="t1[20:21]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">PRP</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">.</item>
+      <item id="tw-ps6" children="tw-ps7">ROOT</item>
+      <item id="tw-ps7" children="tw-ps8 tw-ps9 tw-ps5">S</item>
+      <item id="tw-ps8" children="tw-ps1">NP</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10 tw-ps11">VP</item>
+      <item id="tw-ps10" children="tw-ps3">NP</item>
+      <item id="tw-ps11" children="tw-ps4">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw3" head="tw2">iobj</item>
+      <item id="tw-ds4" dep="tw4" head="tw2">dobj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:08" method="heur" source="intent" />
+      </metadata>
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:08" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[2:3]" />
+      <item id="gw2" content="n3[6:8]" />
+      <item id="gw3" content="n3[16:20]" />
+      <item id="gw4" content="n3[29:32]" />
+      <item id="gw5" content="n3[41:46]" />
+      <item id="gw6" content="n3[53:57]" />
+      <item id="gw7" content="n3[66:67]" />
+      <item id="gw8" content="n3[70:72]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:08" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">VERB</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+      <item id="gw-pos6" alignment="gw6">VERB</item>
+      <item id="gw-pos7" alignment="gw7">NOUN</item>
+      <item id="gw-pos8" alignment="gw8">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:08" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2" />
+      <item id="g3" content="gw3" />
+      <item id="g4" content="gw4" />
+      <item id="g5" content="gw5" />
+      <item id="g6" content="gw6" />
+      <item id="g7" content="gw7" />
+      <item id="g8" content="gw8" />
+    </tier>
+  </igt>
+</xigt-corpus>

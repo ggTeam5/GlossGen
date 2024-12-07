@@ -1,0 +1,140 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3648-3" doc-id="3648" line-range="97-101" tag-types="M+AC+LN L G+CR G+CR T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="aoa" xsi:type="olac:language">Angolar</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="97" tag="M+AC+LN">  Angolar (Maurer 1995:113)</item>
+      <item id="r2" line="98" tag="L">  (5) Ê     ra     Têtêuga                                   ua          kiba        palaxu (...)</item>
+      <item id="r3" line="99" tag="G+CR">            3           give        Tortue                   a           piece       palace</item>
+      <item id="r4" line="100" tag="G+CR">                SG</item>
+      <item id="r5" line="101" tag="T">            'He gave a piece of his palace to Tortue.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="97" tag="M+AC+LN">Angolar (Maurer 1995:113)</item>
+      <item id="c2" alignment="r2" line="98" tag="L">(5) Ê     ra     Têtêuga                                   ua          kiba        palaxu (...)</item>
+      <item id="c3" alignment="r3" line="99 100" tag="G">          3   SG      give        Tortue                   a           piece       palace</item>
+      <item id="c4" alignment="r5" line="101" tag="T">          'He gave a piece of his palace to Tortue.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="97" tag="M+AC+LN">Angolar (Maurer 1995:113)</item>
+      <item id="n2" alignment="c2" line="98" tag="L">Ê     ra     Têtêuga                                   ua          kiba        palaxu (...)</item>
+      <item id="n3" alignment="c3" line="99 100" tag="G">      3   SG      give        Tortue                   a           piece       palace</item>
+      <item id="n4" alignment="c4" line="101" tag="T">He gave a piece of his palace to Tortue.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:1]" />
+      <item id="w2" segmentation="p1[6:8]" />
+      <item id="w3" segmentation="p1[13:20]" />
+      <item id="w4" segmentation="p1[55:57]" />
+      <item id="w5" segmentation="p1[67:71]" />
+      <item id="w6" segmentation="p1[79:85]" />
+      <item id="w7" segmentation="p1[86:91]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:2]" />
+      <item id="tw2" segmentation="t1[3:7]" />
+      <item id="tw3" segmentation="t1[8:9]" />
+      <item id="tw4" segmentation="t1[10:15]" />
+      <item id="tw5" segmentation="t1[16:18]" />
+      <item id="tw6" segmentation="t1[19:22]" />
+      <item id="tw7" segmentation="t1[23:29]" />
+      <item id="tw8" segmentation="t1[30:32]" />
+      <item id="tw9" segmentation="t1[33:39]" />
+      <item id="tw10" segmentation="t1[39:40]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">IN</item>
+      <item id="tw-ps6" alignment="tw6">PRP$</item>
+      <item id="tw-ps7" alignment="tw7">NN</item>
+      <item id="tw-ps8" alignment="tw8">TO</item>
+      <item id="tw-ps9" alignment="tw9">NNP</item>
+      <item id="tw-ps10" alignment="tw10">.</item>
+      <item id="tw-ps11" children="tw-ps12">ROOT</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps14 tw-ps10">S</item>
+      <item id="tw-ps13" children="tw-ps1">NP</item>
+      <item id="tw-ps14" children="tw-ps2 tw-ps15 tw-ps19">VP</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps17">NP</item>
+      <item id="tw-ps16" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps17" children="tw-ps5 tw-ps18">PP</item>
+      <item id="tw-ps18" children="tw-ps6 tw-ps7">NP</item>
+      <item id="tw-ps19" children="tw-ps8 tw-ps20">PP</item>
+      <item id="tw-ps20" children="tw-ps9">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw7" head="tw4">nmod:of</item>
+      <item id="tw-ds6" dep="tw5" head="tw7">case</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">nmod:poss</item>
+      <item id="tw-ds8" dep="tw9" head="tw2">nmod:to</item>
+      <item id="tw-ds9" dep="tw8" head="tw9">case</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw3" target="g5" />
+      <item id="a2" source="tw4" target="g6" />
+      <item id="a3" source="tw7" target="g7" />
+      <item id="a4" source="tw9" target="g4" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:06" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[6:7]" />
+      <item id="gw2" content="n3[10:12]" />
+      <item id="gw3" content="n3[18:22]" />
+      <item id="gw4" content="n3[30:36]" />
+      <item id="gw5" content="n3[55:56]" />
+      <item id="gw6" content="n3[67:72]" />
+      <item id="gw7" content="n3[79:85]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:16:06" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">VERB</item>
+      <item id="gw-pos4" alignment="gw4">ADP</item>
+      <item id="gw-pos5" alignment="gw5">DET</item>
+      <item id="gw-pos6" alignment="gw6">NOUN</item>
+      <item id="gw-pos7" alignment="gw7">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:16:06" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2" />
+      <item id="g3" content="gw3" />
+      <item id="g4" content="gw4" />
+      <item id="g5" content="gw5" />
+      <item id="g6" content="gw6" />
+      <item id="g7" content="gw7" />
+    </tier>
+  </igt>
+</xigt-corpus>

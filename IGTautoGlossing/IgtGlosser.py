@@ -11,8 +11,8 @@ from FeatureMap import SrcGls_Map, TwGls_Map
 import sklearn
 import scipy.stats
 from sklearn.metrics import make_scorer
-from sklearn.cross_validation import cross_val_score
-from sklearn.grid_search import RandomizedSearchCV
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import RandomizedSearchCV
 
 import sklearn_crfsuite
 from sklearn_crfsuite import scorers

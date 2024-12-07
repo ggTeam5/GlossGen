@@ -1,0 +1,50 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2819-55" doc-id="2819" line-range="1458-1459" tag-types="L+LN T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="tsd" xsi:type="olac:language">Tsakonian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1458" tag="L+LN">          b. Tsakonian                        Mou pe!</item>
+      <item id="r2" line="1459" tag="T">                                              `Tell me'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1458" tag="L+LN">b. Tsakonian                        Mou pe!</item>
+      <item id="c2" alignment="r2" line="1459" tag="T">                                    `Tell me'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1458" tag="L+LN">Tsakonian                        Mou pe!</item>
+      <item id="n2" alignment="c2" line="1459" tag="T">Tell me</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:7]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:53:21" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">VB</item>
+      <item id="tw-ps2" alignment="tw2">PRP</item>
+      <item id="tw-ps3" children="tw-ps4">ROOT</item>
+      <item id="tw-ps4" children="tw-ps5">S</item>
+      <item id="tw-ps5" children="tw-ps1 tw-ps6">VP</item>
+      <item id="tw-ps6" children="tw-ps2">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:53:21" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw1">root</item>
+      <item id="tw-ds2" dep="tw2" head="tw1">dobj</item>
+    </tier>
+  </igt>
+</xigt-corpus>

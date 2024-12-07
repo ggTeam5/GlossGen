@@ -1,0 +1,402 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2406-180" doc-id="2406" line-range="3590-3594" tag-types="L G B T M+AC">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="tep" xsi:type="olac:language">Tepecano</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="3590" tag="L">       (i) ndedos       n=an=ahohoinda</item>
+      <item id="r2" line="3591" tag="G">           my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="r3" line="3592" tag="B" />
+      <item id="r4" line="3593" tag="T">           `I will shake my fingers.'</item>
+      <item id="r5" line="3594" tag="M+AC">           (Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="3590" tag="L">(i) ndedos       n=an=ahohoinda</item>
+      <item id="c2" alignment="r2" line="3591" tag="G">    my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="c3" alignment="r4" line="3593" tag="T">    `I will shake my fingers.'</item>
+      <item id="c4" alignment="r5" line="3594" tag="M+AC">(Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="3590" tag="L">ndedos       n=an=ahohoinda</item>
+      <item id="n2" alignment="c2" line="3591" tag="G">my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="n3" alignment="c3" line="3593" tag="T">I will shake my fingers.</item>
+      <item id="n4" alignment="c4" line="3594" tag="M+AC">(Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:6]" />
+      <item id="w2" segmentation="p1[13:27]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1" />
+      <item id="m2" segmentation="w2[0:1]" />
+      <item id="m3" segmentation="w2[2:4]" />
+      <item id="m4" segmentation="w2[5:14]" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <item id="g1" alignment="m1" content="gw1[0:2]" />
+      <item id="g2" alignment="m1" content="gw1[3:10]" />
+      <item id="g3" alignment="m2" content="gw2[0:10]" />
+      <item id="g4" alignment="m3" content="gw2[11:14]" />
+      <item id="g5" alignment="m4" content="gw2[15:19]" />
+      <item id="g6" alignment="m4" content="gw2[20:25]" />
+      <item id="g7" alignment="m4" content="gw2[26:30]" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[0:10]" />
+      <item id="gw2" alignment="w2" content="n2[13:43]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">VERB</item>
+    </tier>
+    <tier id="w-ps" type="phrase-structure" alignment="w" children="w-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="projection" projected-from="tw-ps" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ps1" alignment="w1">PRP$+NNS</item>
+      <item id="w-ps2" alignment="w2">PRP+MD+VB</item>
+      <item id="w-ps3" children="w-ps4">ROOT</item>
+      <item id="w-ps4" children="w-ps5 w-ps2">S</item>
+      <item id="w-ps5" children="w-ps1">NP</item>
+    </tier>
+    <tier id="w-ds" type="dependencies" dep="w" head="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="projection" projected-from="tw-ds" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ds1" dep="w2">root</item>
+      <item id="w-ds2" dep="w1" head="w2">dobj</item>
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[2:6]" />
+      <item id="tw3" segmentation="t1[7:12]" />
+      <item id="tw4" segmentation="t1[13:15]" />
+      <item id="tw5" segmentation="t1[16:23]" />
+      <item id="tw6" segmentation="t1[23:24]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">MD</item>
+      <item id="tw-ps3" alignment="tw3">VB</item>
+      <item id="tw-ps4" alignment="tw4">PRP$</item>
+      <item id="tw-ps5" alignment="tw5">NNS</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10 tw-ps6">S</item>
+      <item id="tw-ps9" children="tw-ps1">NP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11">VP</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps12">VP</item>
+      <item id="tw-ps12" children="tw-ps4 tw-ps5">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw3">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw3">nsubj</item>
+      <item id="tw-ds3" dep="tw2" head="tw3">aux</item>
+      <item id="tw-ds4" dep="tw5" head="tw3">dobj</item>
+      <item id="tw-ds5" dep="tw4" head="tw5">nmod:poss</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g4" />
+      <item id="a2" source="tw2" target="g5" />
+      <item id="a3" source="tw3" target="g6" />
+      <item id="a4" source="tw4" target="g1" />
+      <item id="a5" source="tw5" target="g2" />
+    </tier>
+  </igt>
+  <igt id="igt2406-181" doc-id="2406" line-range="3598-3600" tag-types="L G M+AC">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="tep" xsi:type="olac:language">Tepecano</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="3598" tag="L">       (ii) an=ti          nauw k^^s</item>
+      <item id="r2" line="3599" tag="G">           1SG=TNS/ASP     napal transplanted</item>
+      <item id="r3" line="3600" tag="M+AC">           (Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="3598" tag="L">(ii) an=ti          nauw k^^s</item>
+      <item id="c2" alignment="r2" line="3599" tag="G">    1SG=TNS/ASP     napal transplanted</item>
+      <item id="c3" alignment="r3" line="3600" tag="M+AC">(Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="3598" tag="L"> an=ti          nauw k^^s</item>
+      <item id="n2" alignment="c2" line="3599" tag="G">1SG=TNS/ASP     napal transplanted</item>
+      <item id="n3" alignment="c3" line="3600" tag="M+AC">(Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[1:6]" />
+      <item id="w2" segmentation="p1[16:20]" />
+      <item id="w3" segmentation="p1[21:25]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1[0:2]" />
+      <item id="m2" segmentation="w1[3:5]" />
+      <item id="m3" segmentation="w2" />
+      <item id="m4" segmentation="w3" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T04:18:55" token-type="sub-word" />
+      </metadata>
+      <item id="g1" alignment="m1" content="gw1[0:3]" />
+      <item id="g2" alignment="m2" content="gw1[4:7]" />
+      <item id="g3" alignment="m2" content="gw1[8:11]" />
+      <item id="g4" alignment="m3" content="gw2" />
+      <item id="g5" alignment="m4" content="gw3" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[0:11]" />
+      <item id="gw2" alignment="w2" content="n2[16:21]" />
+      <item id="gw3" alignment="w3" content="n2[22:34]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">ADJ</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T04:18:55" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">NOUN</item>
+      <item id="w-pos3" alignment="w3">ADJ</item>
+    </tier>
+  </igt>
+  <igt id="igt2608-338" doc-id="2608" line-range="12400-12404" tag-types="L G B T M+AC+LN">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="tep" xsi:type="olac:language">Tepecano</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="12400" tag="L">       (i) ndedos       n=an=ahohoinda</item>
+      <item id="r2" line="12401" tag="G">           my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="r3" line="12402" tag="B" />
+      <item id="r4" line="12403" tag="T">           `I will shake my fingers.'</item>
+      <item id="r5" line="12404" tag="M+AC+LN">           (Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="12400" tag="L">(i) ndedos       n=an=ahohoinda</item>
+      <item id="c2" alignment="r2" line="12401" tag="G">    my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="c3" alignment="r4" line="12403" tag="T">    `I will shake my fingers.'</item>
+      <item id="c4" alignment="r5" line="12404" tag="M+AC+LN">(Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="12400" tag="L">ndedos       n=an=ahohoinda</item>
+      <item id="n2" alignment="c2" line="12401" tag="G">my:fingers   INTRODUCER=1SG=will:shake:them</item>
+      <item id="n3" alignment="c3" line="12403" tag="T">I will shake my fingers.</item>
+      <item id="n4" alignment="c4" line="12404" tag="M+AC+LN">(Tepecano; Steele 1977:543)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:6]" />
+      <item id="w2" segmentation="p1[13:27]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1" />
+      <item id="m2" segmentation="w2[0:1]" />
+      <item id="m3" segmentation="w2[2:4]" />
+      <item id="m4" segmentation="w2[5:14]" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <item id="g1" alignment="m1" content="gw1[0:2]" />
+      <item id="g2" alignment="m1" content="gw1[3:10]" />
+      <item id="g3" alignment="m2" content="gw2[0:10]" />
+      <item id="g4" alignment="m3" content="gw2[11:14]" />
+      <item id="g5" alignment="m4" content="gw2[15:19]" />
+      <item id="g6" alignment="m4" content="gw2[20:25]" />
+      <item id="g7" alignment="m4" content="gw2[26:30]" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[0:10]" />
+      <item id="gw2" alignment="w2" content="n2[13:43]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">VERB</item>
+    </tier>
+    <tier id="w-ps" type="phrase-structure" alignment="w" children="w-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="projection" projected-from="tw-ps" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ps1" alignment="w1">PRP$+NNS</item>
+      <item id="w-ps2" alignment="w2">PRP+MD+VB</item>
+      <item id="w-ps3" children="w-ps4">ROOT</item>
+      <item id="w-ps4" children="w-ps5 w-ps2">S</item>
+      <item id="w-ps5" children="w-ps1">NP</item>
+    </tier>
+    <tier id="w-ds" type="dependencies" dep="w" head="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="projection" projected-from="tw-ds" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ds1" dep="w2">root</item>
+      <item id="w-ds2" dep="w1" head="w2">dobj</item>
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[2:6]" />
+      <item id="tw3" segmentation="t1[7:12]" />
+      <item id="tw4" segmentation="t1[13:15]" />
+      <item id="tw5" segmentation="t1[16:23]" />
+      <item id="tw6" segmentation="t1[23:24]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">MD</item>
+      <item id="tw-ps3" alignment="tw3">VB</item>
+      <item id="tw-ps4" alignment="tw4">PRP$</item>
+      <item id="tw-ps5" alignment="tw5">NNS</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10 tw-ps6">S</item>
+      <item id="tw-ps9" children="tw-ps1">NP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11">VP</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps12">VP</item>
+      <item id="tw-ps12" children="tw-ps4 tw-ps5">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw3">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw3">nsubj</item>
+      <item id="tw-ds3" dep="tw2" head="tw3">aux</item>
+      <item id="tw-ds4" dep="tw5" head="tw3">dobj</item>
+      <item id="tw-ds5" dep="tw4" head="tw5">nmod:poss</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g4" />
+      <item id="a2" source="tw2" target="g5" />
+      <item id="a3" source="tw3" target="g6" />
+      <item id="a4" source="tw4" target="g1" />
+      <item id="a5" source="tw5" target="g2" />
+    </tier>
+  </igt>
+  <igt id="igt2608-339" doc-id="2608" line-range="12408-12410" tag-types="L G M+AC+LN">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="tep" xsi:type="olac:language">Tepecano</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="12408" tag="L">       (ii) an=ti          nauw k^^s</item>
+      <item id="r2" line="12409" tag="G">           1SG=TNS/ASP     napal transplanted</item>
+      <item id="r3" line="12410" tag="M+AC+LN">           (Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="12408" tag="L">(ii) an=ti          nauw k^^s</item>
+      <item id="c2" alignment="r2" line="12409" tag="G">    1SG=TNS/ASP     napal transplanted</item>
+      <item id="c3" alignment="r3" line="12410" tag="M+AC+LN">(Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="12408" tag="L"> an=ti          nauw k^^s</item>
+      <item id="n2" alignment="c2" line="12409" tag="G">1SG=TNS/ASP     napal transplanted</item>
+      <item id="n3" alignment="c3" line="12410" tag="M+AC+LN">(Tepecano; Steele 1977:555)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[1:6]" />
+      <item id="w2" segmentation="p1[16:20]" />
+      <item id="w3" segmentation="p1[21:25]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1[0:2]" />
+      <item id="m2" segmentation="w1[3:5]" />
+      <item id="m3" segmentation="w2" />
+      <item id="m4" segmentation="w3" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:23:53" token-type="sub-word" />
+      </metadata>
+      <item id="g1" alignment="m1" content="gw1[0:3]" />
+      <item id="g2" alignment="m2" content="gw1[4:7]" />
+      <item id="g3" alignment="m2" content="gw1[8:11]" />
+      <item id="g4" alignment="m3" content="gw2" />
+      <item id="g5" alignment="m4" content="gw3" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[0:11]" />
+      <item id="gw2" alignment="w2" content="n2[16:21]" />
+      <item id="gw3" alignment="w3" content="n2[22:34]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">ADJ</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:23:53" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PRON</item>
+      <item id="w-pos2" alignment="w2">NOUN</item>
+      <item id="w-pos3" alignment="w3">ADJ</item>
+    </tier>
+  </igt>
+</xigt-corpus>

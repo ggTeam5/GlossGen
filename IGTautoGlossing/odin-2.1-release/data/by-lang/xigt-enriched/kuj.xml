@@ -1,0 +1,116 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3302-36" doc-id="3302" line-range="374-376" tag-types="L+CR L+LN+CR T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="kuj" xsi:type="olac:language">Kuria</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="374" tag="L+CR">                           /ne-a-a-sçma/ [mbaasç@ma]</item>
+      <item id="r2" line="375" tag="L+LN+CR">           c. Kuria  i.</item>
+      <item id="r3" line="376" tag="T">                           `Indeed they have read'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="374 375" tag="L+LN">c. Kuria  i.    /ne-a-a-sçma/ [mbaasç@ma]</item>
+      <item id="c2" alignment="r3" line="376" tag="T">                `Indeed they have read'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="374 375" tag="L">Kuria  i.    /ne-a-a-sçma/</item>
+      <item id="n2" alignment="c1" line="374 375" tag="M+LN">[mbaasç@ma]</item>
+      <item id="n3" alignment="c2" line="376" tag="T">Indeed they have read</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:6]" />
+      <item id="tw2" segmentation="t1[7:11]" />
+      <item id="tw3" segmentation="t1[12:16]" />
+      <item id="tw4" segmentation="t1[17:21]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:43:29" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">RB</item>
+      <item id="tw-ps2" alignment="tw2">PRP</item>
+      <item id="tw-ps3" alignment="tw3">VBP</item>
+      <item id="tw-ps4" alignment="tw4">VBN</item>
+      <item id="tw-ps5" children="tw-ps6">ROOT</item>
+      <item id="tw-ps6" children="tw-ps7 tw-ps8">FRAG</item>
+      <item id="tw-ps7" children="tw-ps1">ADVP</item>
+      <item id="tw-ps8" children="tw-ps9">SBAR</item>
+      <item id="tw-ps9" children="tw-ps10 tw-ps11">S</item>
+      <item id="tw-ps10" children="tw-ps2">NP</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps12">VP</item>
+      <item id="tw-ps12" children="tw-ps4">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:43:29" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw1">root</item>
+      <item id="tw-ds2" dep="tw4" head="tw1">dep</item>
+      <item id="tw-ds3" dep="tw2" head="tw4">nsubj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">aux</item>
+    </tier>
+  </igt>
+  <igt id="igt3302-37" doc-id="3302" line-range="377-379" tag-types="L+CR L+CR T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="kuj" xsi:type="olac:language">Kuria</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="377" tag="L+CR">                           /a-a-sçma/ [aasçm]</item>
+      <item id="r2" line="378" tag="L+CR">                     ii.</item>
+      <item id="r3" line="379" tag="T">                           `They have read'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="377 378" tag="L">ii.   /a-a-sçma/ [aasçm]</item>
+      <item id="c2" alignment="r3" line="379" tag="T">      `They have read'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="377 378" tag="L">/a-a-sçma/</item>
+      <item id="n2" alignment="c1" line="377 378" tag="M">[aasçm]</item>
+      <item id="n3" alignment="c2" line="379" tag="T">They have read</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:9]" />
+      <item id="tw3" segmentation="t1[10:14]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:43:29" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">VBP</item>
+      <item id="tw-ps3" alignment="tw3">VBN</item>
+      <item id="tw-ps4" children="tw-ps5">ROOT</item>
+      <item id="tw-ps5" children="tw-ps6 tw-ps7">S</item>
+      <item id="tw-ps6" children="tw-ps1">NP</item>
+      <item id="tw-ps7" children="tw-ps2 tw-ps8">VP</item>
+      <item id="tw-ps8" children="tw-ps3">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:43:29" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw3">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw3">nsubj</item>
+      <item id="tw-ds3" dep="tw2" head="tw3">aux</item>
+    </tier>
+  </igt>
+</xigt-corpus>

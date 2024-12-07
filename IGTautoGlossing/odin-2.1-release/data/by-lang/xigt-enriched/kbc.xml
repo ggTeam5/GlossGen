@@ -1,0 +1,262 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt29-8" doc-id="29" line-range="203-206" tag-types="L L+AL G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="kbc" xsi:type="olac:language">Kadiwéu</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="203" tag="L">      (5)   a. Maria yel:wadi       oqoqo:di yatita                      nod:a:jo.</item>
+      <item id="r2" line="204" tag="L+AL">               Maria y-el:wad      oqoqo:di y-ati-t+e-wa                 n-od:a:jo</item>
+      <item id="r3" line="205" tag="G">               Mary 3sg.SUBJ-kill chicken 3sg.SUBJ-take-rel+3sg.CL-dative alnbl-knife</item>
+      <item id="r4" line="206" tag="T">             'Mary killed the chicken with a knife'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="203" tag="L">(5)   a. Maria yel:wadi       oqoqo:di yatita                      nod:a:jo.</item>
+      <item id="c2" alignment="r2" line="204" tag="L+AL">         Maria y-el:wad      oqoqo:di y-ati-t+e-wa                 n-od:a:jo</item>
+      <item id="c3" alignment="r3" line="205" tag="G">         Mary 3sg.SUBJ-kill chicken 3sg.SUBJ-take-rel+3sg.CL-dative alnbl-knife</item>
+      <item id="c4" alignment="r4" line="206" tag="T">       'Mary killed the chicken with a knife'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="203" tag="L">a. Maria yel:wadi       oqoqo:di yatita                      nod:a:jo.</item>
+      <item id="n2" alignment="c2" line="204" tag="L+AL">   Maria y-el:wad      oqoqo:di y-ati-t+e-wa                 n-od:a:jo</item>
+      <item id="n3" alignment="c3" line="205" tag="G">   Mary 3sg.SUBJ-kill chicken 3sg.SUBJ-take-rel+3sg.CL-dative alnbl-knife</item>
+      <item id="n4" alignment="c4" line="206" tag="T">Mary killed the chicken with a knife</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+      <item id="p2" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:1]" />
+      <item id="w2" segmentation="p1[1:2]" />
+      <item id="w3" segmentation="p1[3:8]" />
+      <item id="w4" segmentation="p1[9:17]" />
+      <item id="w5" segmentation="p1[24:32]" />
+      <item id="w6" segmentation="p1[33:39]" />
+      <item id="w7" segmentation="p1[61:69]" />
+      <item id="w8" segmentation="p1[69:70]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:11]" />
+      <item id="tw3" segmentation="t1[12:15]" />
+      <item id="tw4" segmentation="t1[16:23]" />
+      <item id="tw5" segmentation="t1[24:28]" />
+      <item id="tw6" segmentation="t1[29:30]" />
+      <item id="tw7" segmentation="t1[31:36]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:32" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">IN</item>
+      <item id="tw-ps6" alignment="tw6">DT</item>
+      <item id="tw-ps7" alignment="tw7">NN</item>
+      <item id="tw-ps8" children="tw-ps9">ROOT</item>
+      <item id="tw-ps9" children="tw-ps10 tw-ps11">S</item>
+      <item id="tw-ps10" children="tw-ps1">NP</item>
+      <item id="tw-ps11" children="tw-ps2 tw-ps12 tw-ps13">VP</item>
+      <item id="tw-ps12" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps13" children="tw-ps5 tw-ps14">PP</item>
+      <item id="tw-ps14" children="tw-ps6 tw-ps7">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:32" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw7" head="tw2">nmod:with</item>
+      <item id="tw-ds6" dep="tw5" head="tw7">case</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">det</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:32" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw2" target="g4" />
+      <item id="a3" source="tw4" target="g5" />
+      <item id="a4" source="tw7" target="g13" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T02:52:32" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[3:7]" />
+      <item id="gw2" content="n3[8:21]" />
+      <item id="gw3" content="n3[22:29]" />
+      <item id="gw4" content="n3[30:61]" />
+      <item id="gw5" content="n3[62:73]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:32" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">NOUN</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+      <item id="gw-pos4" alignment="gw4">VERB</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T02:52:32" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2[0:3]" />
+      <item id="g3" content="gw2[4:8]" />
+      <item id="g4" content="gw2[9:13]" />
+      <item id="g5" content="gw3" />
+      <item id="g6" content="gw4[0:3]" />
+      <item id="g7" content="gw4[4:8]" />
+      <item id="g8" content="gw4[9:13]" />
+      <item id="g9" content="gw4[14:21]" />
+      <item id="g10" content="gw4[22:24]" />
+      <item id="g11" content="gw4[25:31]" />
+      <item id="g12" content="gw5[0:5]" />
+      <item id="g13" content="gw5[6:11]" />
+    </tier>
+  </igt>
+  <igt id="igt29-9" doc-id="29" line-range="208-211" tag-types="L L+AL G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="kbc" xsi:type="olac:language">Kadiwéu</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="208" tag="L">            b. Maria yaqadi    nekenigo            katiwed:i               nam:e:ja.</item>
+      <item id="r2" line="209" tag="L+AL">               Maria y-aqad    n-eke-nigo         ka-t-w+e-d:              n-am:e:ja</item>
+      <item id="r3" line="210" tag="G">            Mary 3sg.SUBJ-find alnbl-dog-animal Loc-rel-inward+3sg.CL-theme alnbl-table</item>
+      <item id="r4" line="211" tag="T">             'Mary found the dog under the table'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="208" tag="L">b. Maria yaqadi    nekenigo            katiwed:i               nam:e:ja.</item>
+      <item id="c2" alignment="r2" line="209" tag="L+AL">   Maria y-aqad    n-eke-nigo         ka-t-w+e-d:              n-am:e:ja</item>
+      <item id="c3" alignment="r3" line="210" tag="G">Mary 3sg.SUBJ-find alnbl-dog-animal Loc-rel-inward+3sg.CL-theme alnbl-table</item>
+      <item id="c4" alignment="r4" line="211" tag="T"> 'Mary found the dog under the table'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="208" tag="L">b. Maria yaqadi    nekenigo            katiwed:i               nam:e:ja.</item>
+      <item id="n2" alignment="c2" line="209" tag="L+AL">   Maria y-aqad    n-eke-nigo         ka-t-w+e-d:              n-am:e:ja</item>
+      <item id="n3" alignment="c3" line="210" tag="G">Mary 3sg.SUBJ-find alnbl-dog-animal Loc-rel-inward+3sg.CL-theme alnbl-table</item>
+      <item id="n4" alignment="c4" line="211" tag="T">Mary found the dog under the table</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+      <item id="p2" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:1]" />
+      <item id="w2" segmentation="p1[1:2]" />
+      <item id="w3" segmentation="p1[3:8]" />
+      <item id="w4" segmentation="p1[9:15]" />
+      <item id="w5" segmentation="p1[19:27]" />
+      <item id="w6" segmentation="p1[39:48]" />
+      <item id="w7" segmentation="p1[63:71]" />
+      <item id="w8" segmentation="p1[71:72]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:10]" />
+      <item id="tw3" segmentation="t1[11:14]" />
+      <item id="tw4" segmentation="t1[15:18]" />
+      <item id="tw5" segmentation="t1[19:24]" />
+      <item id="tw6" segmentation="t1[25:28]" />
+      <item id="tw7" segmentation="t1[29:34]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:33" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">IN</item>
+      <item id="tw-ps6" alignment="tw6">DT</item>
+      <item id="tw-ps7" alignment="tw7">NN</item>
+      <item id="tw-ps8" children="tw-ps9">ROOT</item>
+      <item id="tw-ps9" children="tw-ps10 tw-ps11">S</item>
+      <item id="tw-ps10" children="tw-ps1">NP</item>
+      <item id="tw-ps11" children="tw-ps2 tw-ps12 tw-ps13">VP</item>
+      <item id="tw-ps12" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps13" children="tw-ps5 tw-ps14">PP</item>
+      <item id="tw-ps14" children="tw-ps6 tw-ps7">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:33" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw7" head="tw2">nmod:under</item>
+      <item id="tw-ds6" dep="tw5" head="tw7">case</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">det</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:33" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw4" target="g6" />
+      <item id="a3" source="tw7" target="g14" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T02:52:33" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[0:4]" />
+      <item id="gw2" content="n3[5:18]" />
+      <item id="gw3" content="n3[19:35]" />
+      <item id="gw4" content="n3[36:63]" />
+      <item id="gw5" content="n3[64:75]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T02:52:33" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">NOUN</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T02:52:33" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2[0:3]" />
+      <item id="g3" content="gw2[4:8]" />
+      <item id="g4" content="gw2[9:13]" />
+      <item id="g5" content="gw3[0:5]" />
+      <item id="g6" content="gw3[6:9]" />
+      <item id="g7" content="gw3[10:16]" />
+      <item id="g8" content="gw4[0:3]" />
+      <item id="g9" content="gw4[4:7]" />
+      <item id="g10" content="gw4[8:18]" />
+      <item id="g11" content="gw4[19:21]" />
+      <item id="g12" content="gw4[22:27]" />
+      <item id="g13" content="gw5[0:5]" />
+      <item id="g14" content="gw5[6:11]" />
+    </tier>
+  </igt>
+</xigt-corpus>

@@ -1,0 +1,93 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2149-23" doc-id="2149" line-range="1541-1542" tag-types="L+LN+DB G+DB">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="rom" xsi:type="olac:language">Romany</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1541" tag="L+LN+DB">  Romany                (*le) murré raklés                          le raklés le murrés</item>
+      <item id="r2" line="1542" tag="G+DB">                        (the) my    boy                             the boy the my</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1541" tag="L+LN+DB">Romany                (*le) murré raklés                          le raklés le murrés</item>
+      <item id="c2" alignment="r2" line="1542" tag="G+DB">                      (the) my    boy                             the boy the my</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1541" tag="L+DB">(*le) murré raklés                          le raklés le murrés</item>
+      <item id="n2" alignment="c1" line="1541" tag="M+LN">Romany</item>
+      <item id="n3" alignment="c2" line="1542" tag="G+DB">(the) my    boy                             the boy the my</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:1]" />
+      <item id="w2" segmentation="p1[1:4]" />
+      <item id="w3" segmentation="p1[4:5]" />
+      <item id="w4" segmentation="p1[6:11]" />
+      <item id="w5" segmentation="p1[12:18]" />
+      <item id="w6" segmentation="p1[44:46]" />
+      <item id="w7" segmentation="p1[47:53]" />
+      <item id="w8" segmentation="p1[54:56]" />
+      <item id="w9" segmentation="p1[57:63]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w2" />
+      <item id="m2" segmentation="w4" />
+      <item id="m3" segmentation="w5" />
+      <item id="m4" segmentation="w6" />
+      <item id="m5" segmentation="w7" />
+      <item id="m6" segmentation="w8" />
+      <item id="m7" segmentation="w9" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:40:10" token-type="sub-word" />
+      </metadata>
+      <item id="g1" alignment="m1" content="gw1" />
+      <item id="g2" alignment="m2" content="gw2" />
+      <item id="g3" alignment="m3" content="gw3" />
+      <item id="g4" alignment="m4" content="gw4" />
+      <item id="g5" alignment="m5" content="gw5" />
+      <item id="g6" alignment="m6" content="gw6" />
+      <item id="g7" alignment="m7" content="gw7" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w2" content="n3[0:5]" />
+      <item id="gw2" alignment="w4" content="n3[6:8]" />
+      <item id="gw3" alignment="w5" content="n3[12:15]" />
+      <item id="gw4" alignment="w6" content="n3[44:47]" />
+      <item id="gw5" alignment="w7" content="n3[48:51]" />
+      <item id="gw6" alignment="w8" content="n3[52:55]" />
+      <item id="gw7" alignment="w9" content="n3[56:58]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:10" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">DET</item>
+      <item id="gw-pos2" alignment="gw2">PRON</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+      <item id="gw-pos4" alignment="gw4">DET</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+      <item id="gw-pos6" alignment="gw6">DET</item>
+      <item id="gw-pos7" alignment="gw7">PRON</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:40:10" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">PUNC</item>
+      <item id="w-pos2" alignment="w2">DET</item>
+      <item id="w-pos3" alignment="w3">PUNC</item>
+      <item id="w-pos4" alignment="w4">PRON</item>
+      <item id="w-pos5" alignment="w5">NOUN</item>
+      <item id="w-pos6" alignment="w6">DET</item>
+      <item id="w-pos7" alignment="w7">NOUN</item>
+      <item id="w-pos8" alignment="w8">DET</item>
+      <item id="w-pos9" alignment="w9">PRON</item>
+    </tier>
+  </igt>
+</xigt-corpus>

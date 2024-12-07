@@ -1,0 +1,194 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt2716-39" doc-id="2716" line-range="528-530" tag-types="L G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="baz" xsi:type="olac:language">Nen</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="528" tag="L">  (27)a. àná     mònE@ índì</item>
+      <item id="r2" line="529" tag="G">         3S:PST money give</item>
+      <item id="r3" line="530" tag="T">         `s/he gave money'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="528" tag="L">(27)a. àná     mònE@ índì</item>
+      <item id="c2" alignment="r2" line="529" tag="G">       3S:PST money give</item>
+      <item id="c3" alignment="r3" line="530" tag="T">       `s/he gave money'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="528" tag="L">(27)a. àná     mònE@ índì</item>
+      <item id="n2" alignment="c2" line="529" tag="G">       3S:PST money give</item>
+      <item id="n3" alignment="c3" line="530" tag="T">s/he gave money</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:1]" />
+      <item id="w2" segmentation="p1[1:3]" />
+      <item id="w3" segmentation="p1[3:4]" />
+      <item id="w4" segmentation="p1[4:5]" />
+      <item id="w5" segmentation="p1[5:6]" />
+      <item id="w6" segmentation="p1[7:10]" />
+      <item id="w7" segmentation="p1[15:20]" />
+      <item id="w8" segmentation="p1[21:25]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:9]" />
+      <item id="tw3" segmentation="t1[10:15]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NN</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">NN</item>
+      <item id="tw-ps4" children="tw-ps5">ROOT</item>
+      <item id="tw-ps5" children="tw-ps6 tw-ps7">S</item>
+      <item id="tw-ps6" children="tw-ps1">NP</item>
+      <item id="tw-ps7" children="tw-ps2 tw-ps8">VP</item>
+      <item id="tw-ps8" children="tw-ps3">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw3" head="tw2">dobj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw3" target="g3" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:56:22" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[7:13]" />
+      <item id="gw2" content="n2[14:19]" />
+      <item id="gw3" content="n2[20:24]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">VERB</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">VERB</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:56:22" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1[0:2]" />
+      <item id="g2" content="gw1[3:6]" />
+      <item id="g3" content="gw2" />
+      <item id="g4" content="gw3" />
+    </tier>
+  </igt>
+  <igt id="igt2716-40" doc-id="2716" line-range="531-533" tag-types="L G T+AC">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="baz" xsi:type="olac:language">Nen</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="531" tag="L">     b. àná      índì á mònE@</item>
+      <item id="r2" line="532" tag="G">         3S:PST give ? money</item>
+      <item id="r3" line="533" tag="T+AC">         `s/he gave MONEY' (Mous 1997: 126)</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="531" tag="L">b. àná      índì á mònE@</item>
+      <item id="c2" alignment="r2" line="532" tag="G">    3S:PST give ? money</item>
+      <item id="c3" alignment="r3" line="533" tag="T+AC">    `s/he gave MONEY' (Mous 1997: 126)</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="531" tag="L">àná      índì á mònE@</item>
+      <item id="n2" alignment="c2" line="532" tag="G"> 3S:PST give ? money</item>
+      <item id="n3" alignment="c3" line="533" tag="T">s/he gave MONEY</item>
+      <item id="n4" alignment="c3" line="533" tag="M+AC">(Mous 1997: 126)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:3]" />
+      <item id="w2" segmentation="p1[9:13]" />
+      <item id="w3" segmentation="p1[14:15]" />
+      <item id="w4" segmentation="p1[16:21]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:9]" />
+      <item id="tw3" segmentation="t1[10:15]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NN</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">NN</item>
+      <item id="tw-ps4" children="tw-ps5">ROOT</item>
+      <item id="tw-ps5" children="tw-ps6 tw-ps7">S</item>
+      <item id="tw-ps6" children="tw-ps1">NP</item>
+      <item id="tw-ps7" children="tw-ps2 tw-ps8">VP</item>
+      <item id="tw-ps8" children="tw-ps3">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw3" head="tw2">dobj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw3" target="g5" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:56:22" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[1:7]" />
+      <item id="gw2" content="n2[8:12]" />
+      <item id="gw3" content="n2[13:14]" />
+      <item id="gw4" content="n2[15:20]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:56:22" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">VERB</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+      <item id="gw-pos3" alignment="gw3">PUNC</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:56:22" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1[0:2]" />
+      <item id="g2" content="gw1[3:6]" />
+      <item id="g3" content="gw2" />
+      <item id="g4" content="gw3" />
+      <item id="g5" content="gw4" />
+    </tier>
+  </igt>
+</xigt-corpus>

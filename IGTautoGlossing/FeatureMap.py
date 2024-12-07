@@ -8,8 +8,8 @@ data. Also collects counts of input and output instances.
 import re
 import sys
 import string
-import corenlp
 import time
+import spacy
 
 class FeatureMap:
     def __init__(self, glosser=None):
@@ -343,7 +343,7 @@ if they are present.
 class TwGls_Map(FeatureMap):
     def __init__(self, glosser=None):
         super().__init__(glosser)
-        self.lemmatizer = corenlp.CoreNLPClient(annotators="tokenize ssplit pos lemma".split(), timeout=30000, memory='8G')
+        self.lemmatizer = spacy.load("en_core_web_md")
 
     def get_translation(self, igt):
         return self._parent.get_translation(igt)
@@ -360,14 +360,14 @@ class TwGls_Map(FeatureMap):
     def lemmatize(self, sentence):
         lemmas = dict()
         try:
-            processed = self.lemmatizer.annotate(sentence)
-            lemmatized = processed.sentence[0]
-            for token in lemmatized.token:
-                lemmas[token.originalText] = token.lemma
+            doc = self.lemmatizer(sentence)
+            # lemmatized = doc.sents[0] # ask tutor
+            for token in doc:
+                lemmas[token.text] = token.lemma_
         except:
             self.lemmatizer = None
             time.sleep(5)
-            self.lemmatizer = corenlp.CoreNLPClient(annotators="tokenize ssplit pos lemma".split(), timeout=30000, memory='8G')
+            self.lemmatizer = spacy.load("en_core_web_sm")
         return lemmas
 
     def rm_igt(self, igt):

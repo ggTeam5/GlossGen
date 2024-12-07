@@ -1,0 +1,772 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3527-1" doc-id="3527" line-range="88-89" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="88" tag="L">  (3) a.Wer hat alle/viele/die meisten Bücher wo gekauft?</item>
+      <item id="r2" line="89" tag="T">           `Who bought all/many/most books where?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="88" tag="L">(3) a.Wer hat alle/viele/die meisten Bücher wo gekauft?</item>
+      <item id="c2" alignment="r2" line="89" tag="T">         `Who bought all/many/most books where?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="88" tag="L">a.Wer hat alle/viele/die meisten Bücher wo gekauft?</item>
+      <item id="n2" alignment="c2" line="89" tag="T">Who bought all/many/most books where?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:10]" />
+      <item id="tw3" segmentation="t1[11:24]" />
+      <item id="tw4" segmentation="t1[25:30]" />
+      <item id="tw5" segmentation="t1[31:36]" />
+      <item id="tw6" segmentation="t1[36:37]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">JJ</item>
+      <item id="tw-ps4" alignment="tw4">NNS</item>
+      <item id="tw-ps5" alignment="tw5">WRB</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10 tw-ps6">SBARQ</item>
+      <item id="tw-ps9" children="tw-ps1">WHNP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11 tw-ps12">SQ</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps12" children="tw-ps13">SBAR</item>
+      <item id="tw-ps13" children="tw-ps5">WHADVP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">amod</item>
+      <item id="tw-ds5" dep="tw5" head="tw2">advcl</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-2" doc-id="3527" line-range="90-91" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="90" tag="L">      b. * Wer hat kein Buch/wenige/höchstens drei Bücher wo gekauft?</item>
+      <item id="r2" line="91" tag="T">           `Who bought no book/few/at most three books where?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="90" tag="L">b. * Wer hat kein Buch/wenige/höchstens drei Bücher wo gekauft?</item>
+      <item id="c2" alignment="r2" line="91" tag="T">     `Who bought no book/few/at most three books where?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="90" tag="L">Wer hat kein Buch/wenige/höchstens drei Bücher wo gekauft?</item>
+      <item id="n2" alignment="c2" line="91" tag="T">Who bought no book/few/at most three books where?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:10]" />
+      <item id="tw3" segmentation="t1[11:13]" />
+      <item id="tw4" segmentation="t1[14:25]" />
+      <item id="tw5" segmentation="t1[26:30]" />
+      <item id="tw6" segmentation="t1[31:36]" />
+      <item id="tw7" segmentation="t1[37:42]" />
+      <item id="tw8" segmentation="t1[43:48]" />
+      <item id="tw9" segmentation="t1[48:49]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">JJ</item>
+      <item id="tw-ps5" alignment="tw5">JJS</item>
+      <item id="tw-ps6" alignment="tw6">CD</item>
+      <item id="tw-ps7" alignment="tw7">NNS</item>
+      <item id="tw-ps8" alignment="tw8">WRB</item>
+      <item id="tw-ps9" alignment="tw9">.</item>
+      <item id="tw-ps10" children="tw-ps11">ROOT</item>
+      <item id="tw-ps11" children="tw-ps12 tw-ps13 tw-ps9">SBARQ</item>
+      <item id="tw-ps12" children="tw-ps1">WHNP</item>
+      <item id="tw-ps13" children="tw-ps2 tw-ps14 tw-ps17">SQ</item>
+      <item id="tw-ps14" children="tw-ps3 tw-ps4 tw-ps15">NP</item>
+      <item id="tw-ps15" children="tw-ps5 tw-ps16 tw-ps7">NP</item>
+      <item id="tw-ps16" children="tw-ps6">ADJP</item>
+      <item id="tw-ps17" children="tw-ps18">SBAR</item>
+      <item id="tw-ps18" children="tw-ps8">WHADVP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw7" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw7">neg</item>
+      <item id="tw-ds5" dep="tw4" head="tw7">amod</item>
+      <item id="tw-ds6" dep="tw5" head="tw7">amod</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">amod</item>
+      <item id="tw-ds8" dep="tw8" head="tw2">advcl</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-3" doc-id="3527" line-range="96-97" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="96" tag="L">  (4) a.Viele Bücher hat Peter gestern gelesen. (Er ist fleißig.)</item>
+      <item id="r2" line="97" tag="T">           `Many books Peter read yesterday. (He is a hard worker.)'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="96" tag="L">(4) a.Viele Bücher hat Peter gestern gelesen. (Er ist fleißig.)</item>
+      <item id="c2" alignment="r2" line="97" tag="T">         `Many books Peter read yesterday. (He is a hard worker.)'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="96" tag="L">a.Viele Bücher hat Peter gestern gelesen.</item>
+      <item id="n2" alignment="c1" line="96" tag="M">(Er ist fleißig.)</item>
+      <item id="n3" alignment="c2" line="97" tag="T">Many books Peter read yesterday. (He is a hard worker.)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:10]" />
+      <item id="tw3" segmentation="t1[11:16]" />
+      <item id="tw4" segmentation="t1[17:21]" />
+      <item id="tw5" segmentation="t1[22:31]" />
+      <item id="tw6" segmentation="t1[31:32]" />
+      <item id="tw7" segmentation="t1[33:34]" />
+      <item id="tw8" segmentation="t1[34:36]" />
+      <item id="tw9" segmentation="t1[37:39]" />
+      <item id="tw10" segmentation="t1[40:41]" />
+      <item id="tw11" segmentation="t1[42:46]" />
+      <item id="tw12" segmentation="t1[47:53]" />
+      <item id="tw13" segmentation="t1[53:55]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">JJ</item>
+      <item id="tw-ps2" alignment="tw2">NNS</item>
+      <item id="tw-ps3" alignment="tw3">NNP</item>
+      <item id="tw-ps4" alignment="tw4">VBD</item>
+      <item id="tw-ps5" alignment="tw5">NN</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" alignment="tw7">VBP</item>
+      <item id="tw-ps8" alignment="tw8">PRP</item>
+      <item id="tw-ps9" alignment="tw9">VBZ</item>
+      <item id="tw-ps10" alignment="tw10">DT</item>
+      <item id="tw-ps11" alignment="tw11">JJ</item>
+      <item id="tw-ps12" alignment="tw12">NN</item>
+      <item id="tw-ps13" alignment="tw13">NN</item>
+      <item id="tw-ps14" children="tw-ps15">ROOT</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps23">S</item>
+      <item id="tw-ps16" children="tw-ps17 tw-ps18">NP</item>
+      <item id="tw-ps17" children="tw-ps1 tw-ps2">NP</item>
+      <item id="tw-ps18" children="tw-ps19">SBAR</item>
+      <item id="tw-ps19" children="tw-ps20 tw-ps21 tw-ps6">S</item>
+      <item id="tw-ps20" children="tw-ps3">NP</item>
+      <item id="tw-ps21" children="tw-ps4 tw-ps22">VP</item>
+      <item id="tw-ps22" children="tw-ps5">NP</item>
+      <item id="tw-ps23" children="tw-ps7 tw-ps24">VP</item>
+      <item id="tw-ps24" children="tw-ps25">SBAR</item>
+      <item id="tw-ps25" children="tw-ps26 tw-ps27">S</item>
+      <item id="tw-ps26" children="tw-ps8">NP</item>
+      <item id="tw-ps27" children="tw-ps9 tw-ps28">VP</item>
+      <item id="tw-ps28" children="tw-ps10 tw-ps11 tw-ps12 tw-ps13">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw7">root</item>
+      <item id="tw-ds2" dep="tw2" head="tw7">nsubj</item>
+      <item id="tw-ds3" dep="tw1" head="tw2">amod</item>
+      <item id="tw-ds4" dep="tw4" head="tw2">acl:relcl</item>
+      <item id="tw-ds5" dep="tw3" head="tw4">nsubj</item>
+      <item id="tw-ds6" dep="tw5" head="tw4">nmod:tmod</item>
+      <item id="tw-ds7" dep="tw13" head="tw7">ccomp</item>
+      <item id="tw-ds8" dep="tw8" head="tw13">nsubj</item>
+      <item id="tw-ds9" dep="tw9" head="tw13">cop</item>
+      <item id="tw-ds10" dep="tw10" head="tw13">det</item>
+      <item id="tw-ds11" dep="tw11" head="tw13">amod</item>
+      <item id="tw-ds12" dep="tw12" head="tw13">compound</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-4" doc-id="3527" line-range="98-99" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="98" tag="L">      b. * Wenige Bücher hat Peter gestern gelesen. (Er ist faul.)</item>
+      <item id="r2" line="99" tag="T">           `Few books Peter read yesterday. (He is lazy.)'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="98" tag="L">b. * Wenige Bücher hat Peter gestern gelesen. (Er ist faul.)</item>
+      <item id="c2" alignment="r2" line="99" tag="T">     `Few books Peter read yesterday. (He is lazy.)'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="*" line="98" tag="L">Wenige Bücher hat Peter gestern gelesen.</item>
+      <item id="n2" alignment="c1" line="98" tag="M">(Er ist faul.)</item>
+      <item id="n3" alignment="c2" line="99" tag="T">Few books Peter read yesterday. (He is lazy.)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="*" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:9]" />
+      <item id="tw3" segmentation="t1[10:15]" />
+      <item id="tw4" segmentation="t1[16:20]" />
+      <item id="tw5" segmentation="t1[21:30]" />
+      <item id="tw6" segmentation="t1[30:31]" />
+      <item id="tw7" segmentation="t1[32:33]" />
+      <item id="tw8" segmentation="t1[33:35]" />
+      <item id="tw9" segmentation="t1[36:38]" />
+      <item id="tw10" segmentation="t1[39:43]" />
+      <item id="tw11" segmentation="t1[43:45]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">JJ</item>
+      <item id="tw-ps2" alignment="tw2">NNS</item>
+      <item id="tw-ps3" alignment="tw3">NNP</item>
+      <item id="tw-ps4" alignment="tw4">VBD</item>
+      <item id="tw-ps5" alignment="tw5">NN</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" alignment="tw7">VBP</item>
+      <item id="tw-ps8" alignment="tw8">PRP</item>
+      <item id="tw-ps9" alignment="tw9">VBZ</item>
+      <item id="tw-ps10" alignment="tw10">JJ</item>
+      <item id="tw-ps11" alignment="tw11">NN</item>
+      <item id="tw-ps12" children="tw-ps13">ROOT</item>
+      <item id="tw-ps13" children="tw-ps14 tw-ps21">S</item>
+      <item id="tw-ps14" children="tw-ps15 tw-ps16">NP</item>
+      <item id="tw-ps15" children="tw-ps1 tw-ps2">NP</item>
+      <item id="tw-ps16" children="tw-ps17">SBAR</item>
+      <item id="tw-ps17" children="tw-ps18 tw-ps19 tw-ps6">S</item>
+      <item id="tw-ps18" children="tw-ps3">NP</item>
+      <item id="tw-ps19" children="tw-ps4 tw-ps20">VP</item>
+      <item id="tw-ps20" children="tw-ps5">NP</item>
+      <item id="tw-ps21" children="tw-ps7 tw-ps22">VP</item>
+      <item id="tw-ps22" children="tw-ps23">SBAR</item>
+      <item id="tw-ps23" children="tw-ps24 tw-ps25">S</item>
+      <item id="tw-ps24" children="tw-ps8">NP</item>
+      <item id="tw-ps25" children="tw-ps9 tw-ps26">VP</item>
+      <item id="tw-ps26" children="tw-ps10 tw-ps11">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:17" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw7">root</item>
+      <item id="tw-ds2" dep="tw2" head="tw7">nsubj</item>
+      <item id="tw-ds3" dep="tw1" head="tw2">amod</item>
+      <item id="tw-ds4" dep="tw4" head="tw2">acl:relcl</item>
+      <item id="tw-ds5" dep="tw3" head="tw4">nsubj</item>
+      <item id="tw-ds6" dep="tw5" head="tw4">nmod:tmod</item>
+      <item id="tw-ds7" dep="tw11" head="tw7">ccomp</item>
+      <item id="tw-ds8" dep="tw8" head="tw11">nsubj</item>
+      <item id="tw-ds9" dep="tw9" head="tw11">cop</item>
+      <item id="tw-ds10" dep="tw10" head="tw11">amod</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-5" doc-id="3527" line-range="107-108" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="107" tag="L">  (5) a.VIELE Bücher hat Peter gestern gelesen (, nicht ALLE).</item>
+      <item id="r2" line="108" tag="T">           `MANY many books Peter read yesterday (, not ALL).'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="107" tag="L">(5) a.VIELE Bücher hat Peter gestern gelesen (, nicht ALLE).</item>
+      <item id="c2" alignment="r2" line="108" tag="T">         `MANY many books Peter read yesterday (, not ALL).'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="107" tag="L">a.VIELE Bücher hat Peter gestern gelesen (, nicht ALLE).</item>
+      <item id="n2" alignment="c2" line="108" tag="T">MANY many books Peter read yesterday (, not ALL).</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:9]" />
+      <item id="tw3" segmentation="t1[10:15]" />
+      <item id="tw4" segmentation="t1[16:21]" />
+      <item id="tw5" segmentation="t1[22:26]" />
+      <item id="tw6" segmentation="t1[27:36]" />
+      <item id="tw7" segmentation="t1[37:39]" />
+      <item id="tw8" segmentation="t1[40:43]" />
+      <item id="tw9" segmentation="t1[44:47]" />
+      <item id="tw10" segmentation="t1[47:49]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">JJ</item>
+      <item id="tw-ps2" alignment="tw2">JJ</item>
+      <item id="tw-ps3" alignment="tw3">NNS</item>
+      <item id="tw-ps4" alignment="tw4">NNP</item>
+      <item id="tw-ps5" alignment="tw5">VBD</item>
+      <item id="tw-ps6" alignment="tw6">NN</item>
+      <item id="tw-ps7" alignment="tw7">VBP</item>
+      <item id="tw-ps8" alignment="tw8">RB</item>
+      <item id="tw-ps9" alignment="tw9">NNP</item>
+      <item id="tw-ps10" alignment="tw10">NNP</item>
+      <item id="tw-ps11" children="tw-ps12">ROOT</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps20">S</item>
+      <item id="tw-ps13" children="tw-ps14 tw-ps15">NP</item>
+      <item id="tw-ps14" children="tw-ps1 tw-ps2 tw-ps3">NP</item>
+      <item id="tw-ps15" children="tw-ps16">SBAR</item>
+      <item id="tw-ps16" children="tw-ps17 tw-ps18">S</item>
+      <item id="tw-ps17" children="tw-ps4">NP</item>
+      <item id="tw-ps18" children="tw-ps5 tw-ps19">VP</item>
+      <item id="tw-ps19" children="tw-ps6">NP</item>
+      <item id="tw-ps20" children="tw-ps7 tw-ps8 tw-ps21">VP</item>
+      <item id="tw-ps21" children="tw-ps9 tw-ps10">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw7">root</item>
+      <item id="tw-ds2" dep="tw3" head="tw7">nsubj</item>
+      <item id="tw-ds3" dep="tw1" head="tw3">amod</item>
+      <item id="tw-ds4" dep="tw2" head="tw3">amod</item>
+      <item id="tw-ds5" dep="tw5" head="tw3">acl:relcl</item>
+      <item id="tw-ds6" dep="tw4" head="tw5">nsubj</item>
+      <item id="tw-ds7" dep="tw6" head="tw5">nmod:tmod</item>
+      <item id="tw-ds8" dep="tw8" head="tw7">neg</item>
+      <item id="tw-ds9" dep="tw10" head="tw7">dobj</item>
+      <item id="tw-ds10" dep="tw9" head="tw10">compound</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-6" doc-id="3527" line-range="109-110" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="109" tag="L">      b. WENIGE Bücher hat Peter gestern gelesen (, nicht VIELE).</item>
+      <item id="r2" line="110" tag="T">           `FEW books Peter read yesterday (, not MANY).'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="109" tag="L">b. WENIGE Bücher hat Peter gestern gelesen (, nicht VIELE).</item>
+      <item id="c2" alignment="r2" line="110" tag="T">     `FEW books Peter read yesterday (, not MANY).'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="109" tag="L">WENIGE Bücher hat Peter gestern gelesen (, nicht VIELE).</item>
+      <item id="n2" alignment="c2" line="110" tag="T">FEW books Peter read yesterday (, not MANY).</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:9]" />
+      <item id="tw3" segmentation="t1[10:15]" />
+      <item id="tw4" segmentation="t1[16:20]" />
+      <item id="tw5" segmentation="t1[21:30]" />
+      <item id="tw6" segmentation="t1[31:33]" />
+      <item id="tw7" segmentation="t1[34:37]" />
+      <item id="tw8" segmentation="t1[38:42]" />
+      <item id="tw9" segmentation="t1[42:44]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">NNS</item>
+      <item id="tw-ps3" alignment="tw3">NNP</item>
+      <item id="tw-ps4" alignment="tw4">VBD</item>
+      <item id="tw-ps5" alignment="tw5">NN</item>
+      <item id="tw-ps6" alignment="tw6">VBP</item>
+      <item id="tw-ps7" alignment="tw7">RB</item>
+      <item id="tw-ps8" alignment="tw8">NNP</item>
+      <item id="tw-ps9" alignment="tw9">NNP</item>
+      <item id="tw-ps10" children="tw-ps11">ROOT</item>
+      <item id="tw-ps11" children="tw-ps12 tw-ps19">S</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps14">NP</item>
+      <item id="tw-ps13" children="tw-ps1 tw-ps2">NP</item>
+      <item id="tw-ps14" children="tw-ps15">SBAR</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps17">S</item>
+      <item id="tw-ps16" children="tw-ps3">NP</item>
+      <item id="tw-ps17" children="tw-ps4 tw-ps18">VP</item>
+      <item id="tw-ps18" children="tw-ps5">NP</item>
+      <item id="tw-ps19" children="tw-ps6 tw-ps7 tw-ps20">VP</item>
+      <item id="tw-ps20" children="tw-ps8 tw-ps9">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw6">root</item>
+      <item id="tw-ds2" dep="tw2" head="tw6">nsubj</item>
+      <item id="tw-ds3" dep="tw1" head="tw2">compound</item>
+      <item id="tw-ds4" dep="tw4" head="tw2">acl:relcl</item>
+      <item id="tw-ds5" dep="tw3" head="tw4">nsubj</item>
+      <item id="tw-ds6" dep="tw5" head="tw4">nmod:tmod</item>
+      <item id="tw-ds7" dep="tw7" head="tw6">neg</item>
+      <item id="tw-ds8" dep="tw9" head="tw6">dobj</item>
+      <item id="tw-ds9" dep="tw8" head="tw9">compound</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-7" doc-id="3527" line-range="111-112" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="111" tag="L">  (6) a.Wer hat VIELE Bücher wo gekauft?</item>
+      <item id="r2" line="112" tag="T">          `Who bought MANY books where?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="111" tag="L">(6) a.Wer hat VIELE Bücher wo gekauft?</item>
+      <item id="c2" alignment="r2" line="112" tag="T">        `Who bought MANY books where?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="111" tag="L">a.Wer hat VIELE Bücher wo gekauft?</item>
+      <item id="n2" alignment="c2" line="112" tag="T">Who bought MANY books where?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:10]" />
+      <item id="tw3" segmentation="t1[11:15]" />
+      <item id="tw4" segmentation="t1[16:21]" />
+      <item id="tw5" segmentation="t1[22:27]" />
+      <item id="tw6" segmentation="t1[27:28]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">JJ</item>
+      <item id="tw-ps4" alignment="tw4">NNS</item>
+      <item id="tw-ps5" alignment="tw5">WRB</item>
+      <item id="tw-ps6" alignment="tw6">.</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10 tw-ps6">SBARQ</item>
+      <item id="tw-ps9" children="tw-ps1">WHNP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11 tw-ps12">SQ</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps12" children="tw-ps13">SBAR</item>
+      <item id="tw-ps13" children="tw-ps5">WHADVP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">amod</item>
+      <item id="tw-ds5" dep="tw5" head="tw2">advcl</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-8" doc-id="3527" line-range="113-114" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="113" tag="L">      b. Wer hat (nur) WENIGE Bücher wo gekauft?</item>
+      <item id="r2" line="114" tag="T">          `Who bought (only) FEW books where?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="113" tag="L">b. Wer hat (nur) WENIGE Bücher wo gekauft?</item>
+      <item id="c2" alignment="r2" line="114" tag="T">    `Who bought (only) FEW books where?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="113" tag="L">Wer hat (nur) WENIGE Bücher wo gekauft?</item>
+      <item id="n2" alignment="c2" line="114" tag="T">Who bought (only) FEW books where?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:10]" />
+      <item id="tw3" segmentation="t1[11:12]" />
+      <item id="tw4" segmentation="t1[12:16]" />
+      <item id="tw5" segmentation="t1[16:17]" />
+      <item id="tw6" segmentation="t1[18:21]" />
+      <item id="tw7" segmentation="t1[22:27]" />
+      <item id="tw8" segmentation="t1[28:33]" />
+      <item id="tw9" segmentation="t1[33:34]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">JJ</item>
+      <item id="tw-ps4" alignment="tw4">RB</item>
+      <item id="tw-ps5" alignment="tw5">CD</item>
+      <item id="tw-ps6" alignment="tw6">NNP</item>
+      <item id="tw-ps7" alignment="tw7">NNS</item>
+      <item id="tw-ps8" alignment="tw8">WRB</item>
+      <item id="tw-ps9" alignment="tw9">.</item>
+      <item id="tw-ps10" children="tw-ps11">ROOT</item>
+      <item id="tw-ps11" children="tw-ps12 tw-ps13 tw-ps9">SBARQ</item>
+      <item id="tw-ps12" children="tw-ps1">WHNP</item>
+      <item id="tw-ps13" children="tw-ps2 tw-ps14 tw-ps17">SQ</item>
+      <item id="tw-ps14" children="tw-ps3 tw-ps15">NP</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps6 tw-ps7">NP</item>
+      <item id="tw-ps16" children="tw-ps4 tw-ps5">QP</item>
+      <item id="tw-ps17" children="tw-ps18">SBAR</item>
+      <item id="tw-ps18" children="tw-ps8">WHADVP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw7" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw7">amod</item>
+      <item id="tw-ds5" dep="tw5" head="tw7">nummod</item>
+      <item id="tw-ds6" dep="tw4" head="tw5">advmod</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">compound</item>
+      <item id="tw-ds8" dep="tw8" head="tw2">advcl</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-9" doc-id="3527" line-range="126-127" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="deu" xsi:type="olac:language">German</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="126" tag="L">      b. # Wer hat was gekauft?</item>
+      <item id="r2" line="127" tag="T">           `Who bought what?</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="126" tag="L">b. # Wer hat was gekauft?</item>
+      <item id="c2" alignment="r2" line="127" tag="T">     `Who bought what?</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="#" line="126" tag="L">Wer hat was gekauft?</item>
+      <item id="n2" alignment="c2" line="127" tag="T">Who bought what?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="#" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:10]" />
+      <item id="tw3" segmentation="t1[11:15]" />
+      <item id="tw4" segmentation="t1[15:16]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">WP</item>
+      <item id="tw-ps4" alignment="tw4">.</item>
+      <item id="tw-ps5" children="tw-ps6">ROOT</item>
+      <item id="tw-ps6" children="tw-ps7 tw-ps8 tw-ps4">SBARQ</item>
+      <item id="tw-ps7" children="tw-ps1">WHNP</item>
+      <item id="tw-ps8" children="tw-ps9">SQ</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10">VP</item>
+      <item id="tw-ps10" children="tw-ps3">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw3" head="tw2">dobj</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-10" doc-id="3527" line-range="132-133" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="132" tag="L">  (9) a. * Chi ha scritto che cosa?</item>
+      <item id="r2" line="133" tag="T">           `Who wrote what?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="132" tag="L">(9) a. * Chi ha scritto che cosa?</item>
+      <item id="c2" alignment="r2" line="133" tag="T">         `Who wrote what?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="*" line="132" tag="L">Chi ha scritto che cosa?</item>
+      <item id="n2" alignment="c2" line="133" tag="T">Who wrote what?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="*" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:9]" />
+      <item id="tw3" segmentation="t1[10:14]" />
+      <item id="tw4" segmentation="t1[14:15]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">WP</item>
+      <item id="tw-ps4" alignment="tw4">.</item>
+      <item id="tw-ps5" children="tw-ps6">ROOT</item>
+      <item id="tw-ps6" children="tw-ps7 tw-ps8 tw-ps4">SBARQ</item>
+      <item id="tw-ps7" children="tw-ps1">WHNP</item>
+      <item id="tw-ps8" children="tw-ps9">SQ</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10">VP</item>
+      <item id="tw-ps10" children="tw-ps3">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw3" head="tw2">dobj</item>
+    </tier>
+  </igt>
+  <igt id="igt3527-11" doc-id="3527" line-range="134-135" tag-types="L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="134" tag="L">      b. * MARIO ha scritto una LETTERA.</item>
+      <item id="r2" line="135" tag="T">           `MARIO wrote a LETTER.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="134" tag="L">b. * MARIO ha scritto una LETTERA.</item>
+      <item id="c2" alignment="r2" line="135" tag="T">     `MARIO wrote a LETTER.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="*" line="134" tag="L">MARIO ha scritto una LETTERA.</item>
+      <item id="n2" alignment="c2" line="135" tag="T">MARIO wrote a LETTER.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="*" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:5]" />
+      <item id="tw2" segmentation="t1[6:11]" />
+      <item id="tw3" segmentation="t1[12:13]" />
+      <item id="tw4" segmentation="t1[14:20]" />
+      <item id="tw5" segmentation="t1[20:21]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">.</item>
+      <item id="tw-ps6" children="tw-ps7">ROOT</item>
+      <item id="tw-ps7" children="tw-ps8 tw-ps9 tw-ps5">S</item>
+      <item id="tw-ps8" children="tw-ps1">NP</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10">VP</item>
+      <item id="tw-ps10" children="tw-ps3 tw-ps4">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:18" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+    </tier>
+  </igt>
+</xigt-corpus>

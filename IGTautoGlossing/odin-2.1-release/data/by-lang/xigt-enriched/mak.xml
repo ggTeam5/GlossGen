@@ -1,0 +1,123 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt868-75" doc-id="868" line-range="928-930" tag-types="L+LN G+AC T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="mak" xsi:type="olac:language">Makasarese</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="928" tag="L+LN">    (35)        Ni-jakkalak-i         ri      pulisi                   (Makasarese)</item>
+      <item id="r2" line="929" tag="G+AC">                PASS-arrest-3         by      police (Manyambeang, Mulya, and Nasruddin 1996)</item>
+      <item id="r3" line="930" tag="T">                `He was arrested by the police'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="928" tag="L+LN">(35)        Ni-jakkalak-i         ri      pulisi                   (Makasarese)</item>
+      <item id="c2" alignment="r2" line="929" tag="G+AC">            PASS-arrest-3         by      police (Manyambeang, Mulya, and Nasruddin 1996)</item>
+      <item id="c3" alignment="r3" line="930" tag="T">            `He was arrested by the police'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="928" tag="L">Ni-jakkalak-i         ri      pulisi</item>
+      <item id="n2" alignment="c2" line="929" tag="G+AC">PASS-arrest-3         by      police (Manyambeang, Mulya, and Nasruddin 1996)</item>
+      <item id="n3" alignment="c3" line="930" tag="T">He was arrested by the police</item>
+      <item id="n4" alignment="c1" line="928" tag="M+LN">(Makasarese)</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:13]" />
+      <item id="w2" segmentation="p1[22:24]" />
+      <item id="w3" segmentation="p1[30:36]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:2]" />
+      <item id="tw2" segmentation="t1[3:6]" />
+      <item id="tw3" segmentation="t1[7:15]" />
+      <item id="tw4" segmentation="t1[16:18]" />
+      <item id="tw5" segmentation="t1[19:22]" />
+      <item id="tw6" segmentation="t1[23:29]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:23" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">PRP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">VBN</item>
+      <item id="tw-ps4" alignment="tw4">IN</item>
+      <item id="tw-ps5" alignment="tw5">DT</item>
+      <item id="tw-ps6" alignment="tw6">NN</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10">S</item>
+      <item id="tw-ps9" children="tw-ps1">NP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11">VP</item>
+      <item id="tw-ps11" children="tw-ps3 tw-ps12">VP</item>
+      <item id="tw-ps12" children="tw-ps4 tw-ps13">PP</item>
+      <item id="tw-ps13" children="tw-ps5 tw-ps6">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:23" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw3">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw3">nsubjpass</item>
+      <item id="tw-ds3" dep="tw2" head="tw3">auxpass</item>
+      <item id="tw-ds4" dep="tw6" head="tw3">nmod:by</item>
+      <item id="tw-ds5" dep="tw4" head="tw6">case</item>
+      <item id="tw-ds6" dep="tw5" head="tw6">det</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:24" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw3" target="g2" />
+      <item id="a2" source="tw4" target="g4" />
+      <item id="a3" source="tw6" target="g5" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:44:23" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[0:13]" />
+      <item id="gw2" content="n2[22:24]" />
+      <item id="gw3" content="n2[30:36]" />
+      <item id="gw4" content="n2[37:50]" />
+      <item id="gw5" content="n2[51:57]" />
+      <item id="gw6" content="n2[58:61]" />
+      <item id="gw7" content="n2[62:71]" />
+      <item id="gw8" content="n2[72:77]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:23" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">VERB</item>
+      <item id="gw-pos2" alignment="gw2">ADP</item>
+      <item id="gw-pos3" alignment="gw3">NOUN</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+      <item id="gw-pos5" alignment="gw5">NOUN</item>
+      <item id="gw-pos6" alignment="gw6">CONJ</item>
+      <item id="gw-pos7" alignment="gw7">NOUN</item>
+      <item id="gw-pos8" alignment="gw8">PRON</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:44:24" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1[0:4]" />
+      <item id="g2" content="gw1[5:11]" />
+      <item id="g3" content="gw1[12:13]" />
+      <item id="g4" content="gw2" />
+      <item id="g5" content="gw3" />
+      <item id="g6" content="gw4" />
+      <item id="g7" content="gw5" />
+      <item id="g8" content="gw6" />
+      <item id="g9" content="gw7" />
+      <item id="g10" content="gw8" />
+    </tier>
+  </igt>
+</xigt-corpus>

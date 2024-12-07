@@ -1,0 +1,991 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt196-1" doc-id="196" line-range="1530-1532" tag-types="L T T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="nld" xsi:type="olac:language">Dutch</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1530" tag="L">  (55)          Karl hielp de mijnwerker die de boswachter vond.</item>
+      <item id="r2" line="1531" tag="T">                `Karl helped the mineworker who __ found the forester.'</item>
+      <item id="r3" line="1532" tag="T+AL">                `Karl helped the mineworker who the forester found __.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1530" tag="L">(55)          Karl hielp de mijnwerker die de boswachter vond.</item>
+      <item id="c2" alignment="r2" line="1531" tag="T">              `Karl helped the mineworker who __ found the forester.'</item>
+      <item id="c3" alignment="r3" line="1532" tag="T+AL">              `Karl helped the mineworker who the forester found __.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1530" tag="L">Karl hielp de mijnwerker die de boswachter vond.</item>
+      <item id="n2" alignment="c2" line="1531" tag="T">Karl helped the mineworker who __ found the forester.</item>
+      <item id="n3" alignment="c3" line="1532" tag="T+AL">Karl helped the mineworker who the forester found __.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+      <item id="t2" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:11]" />
+      <item id="tw3" segmentation="t1[12:15]" />
+      <item id="tw4" segmentation="t1[16:26]" />
+      <item id="tw5" segmentation="t1[27:30]" />
+      <item id="tw6" segmentation="t1[31:33]" />
+      <item id="tw7" segmentation="t1[34:39]" />
+      <item id="tw8" segmentation="t1[40:43]" />
+      <item id="tw9" segmentation="t1[44:52]" />
+      <item id="tw10" segmentation="t1[52:53]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:07" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NN</item>
+      <item id="tw-ps5" alignment="tw5">WP</item>
+      <item id="tw-ps6" alignment="tw6">VBP</item>
+      <item id="tw-ps7" alignment="tw7">VBN</item>
+      <item id="tw-ps8" alignment="tw8">DT</item>
+      <item id="tw-ps9" alignment="tw9">NN</item>
+      <item id="tw-ps10" alignment="tw10">.</item>
+      <item id="tw-ps11" children="tw-ps12">ROOT</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps14 tw-ps10">S</item>
+      <item id="tw-ps13" children="tw-ps1">NP</item>
+      <item id="tw-ps14" children="tw-ps2 tw-ps15">VP</item>
+      <item id="tw-ps15" children="tw-ps16 tw-ps17">NP</item>
+      <item id="tw-ps16" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps17" children="tw-ps18 tw-ps19">SBAR</item>
+      <item id="tw-ps18" children="tw-ps5">WHNP</item>
+      <item id="tw-ps19" children="tw-ps20">S</item>
+      <item id="tw-ps20" children="tw-ps6 tw-ps21">VP</item>
+      <item id="tw-ps21" children="tw-ps7 tw-ps22">VP</item>
+      <item id="tw-ps22" children="tw-ps8 tw-ps9">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:07" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw5" head="tw4">ref</item>
+      <item id="tw-ds6" dep="tw6" head="tw4">acl:relcl</item>
+      <item id="tw-ds7" dep="tw4" head="tw6">nsubj</item>
+      <item id="tw-ds8" dep="tw7" head="tw6">dep</item>
+      <item id="tw-ds9" dep="tw9" head="tw7">dobj</item>
+      <item id="tw-ds10" dep="tw8" head="tw9">det</item>
+    </tier>
+  </igt>
+  <igt id="igt196-2" doc-id="196" line-range="1540-1542" tag-types="L T T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="nld" xsi:type="olac:language">Dutch</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1540" tag="L">  (56)   a.     Karl hielp de mijnwerkers die de boswachter vonden</item>
+      <item id="r2" line="1541" tag="T">                Karl helped the mineworkers who the forester found-pl</item>
+      <item id="r3" line="1542" tag="T+AL">                `Karl helped the mineworkers who found the forester.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1540" tag="L">(56)   a.     Karl hielp de mijnwerkers die de boswachter vonden</item>
+      <item id="c2" alignment="r2" line="1541" tag="T">              Karl helped the mineworkers who the forester found-pl</item>
+      <item id="c3" alignment="r3" line="1542" tag="T+AL">              `Karl helped the mineworkers who found the forester.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1540" tag="L">Karl hielp de mijnwerkers die de boswachter vonden</item>
+      <item id="n2" alignment="c2" line="1541 1542" tag="T+AL">Karl helped the mineworkers who the forester found-pl `Karl helped the mineworkers who found the forester.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:11]" />
+      <item id="tw3" segmentation="t1[12:15]" />
+      <item id="tw4" segmentation="t1[16:27]" />
+      <item id="tw5" segmentation="t1[28:31]" />
+      <item id="tw6" segmentation="t1[32:35]" />
+      <item id="tw7" segmentation="t1[36:44]" />
+      <item id="tw8" segmentation="t1[45:53]" />
+      <item id="tw9" segmentation="t1[54:59]" />
+      <item id="tw10" segmentation="t1[60:66]" />
+      <item id="tw11" segmentation="t1[67:70]" />
+      <item id="tw12" segmentation="t1[71:82]" />
+      <item id="tw13" segmentation="t1[83:86]" />
+      <item id="tw14" segmentation="t1[87:92]" />
+      <item id="tw15" segmentation="t1[93:96]" />
+      <item id="tw16" segmentation="t1[97:105]" />
+      <item id="tw17" segmentation="t1[105:106]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NNS</item>
+      <item id="tw-ps5" alignment="tw5">WP</item>
+      <item id="tw-ps6" alignment="tw6">DT</item>
+      <item id="tw-ps7" alignment="tw7">NN</item>
+      <item id="tw-ps8" alignment="tw8">JJ</item>
+      <item id="tw-ps9" alignment="tw9">NN</item>
+      <item id="tw-ps10" alignment="tw10">VBD</item>
+      <item id="tw-ps11" alignment="tw11">DT</item>
+      <item id="tw-ps12" alignment="tw12">NNS</item>
+      <item id="tw-ps13" alignment="tw13">WP</item>
+      <item id="tw-ps14" alignment="tw14">VBD</item>
+      <item id="tw-ps15" alignment="tw15">DT</item>
+      <item id="tw-ps16" alignment="tw16">NN</item>
+      <item id="tw-ps17" alignment="tw17">.</item>
+      <item id="tw-ps18" children="tw-ps19">ROOT</item>
+      <item id="tw-ps19" children="tw-ps20 tw-ps21 tw-ps17">S</item>
+      <item id="tw-ps20" children="tw-ps1">NP</item>
+      <item id="tw-ps21" children="tw-ps2 tw-ps22">VP</item>
+      <item id="tw-ps22" children="tw-ps23 tw-ps24">NP</item>
+      <item id="tw-ps23" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps24" children="tw-ps25 tw-ps26">SBAR</item>
+      <item id="tw-ps25" children="tw-ps5">WHNP</item>
+      <item id="tw-ps26" children="tw-ps27 tw-ps28">S</item>
+      <item id="tw-ps27" children="tw-ps6 tw-ps7 tw-ps8 tw-ps9">NP</item>
+      <item id="tw-ps28" children="tw-ps10 tw-ps29">VP</item>
+      <item id="tw-ps29" children="tw-ps30 tw-ps31">NP</item>
+      <item id="tw-ps30" children="tw-ps11 tw-ps12">NP</item>
+      <item id="tw-ps31" children="tw-ps32 tw-ps33">SBAR</item>
+      <item id="tw-ps32" children="tw-ps13">WHNP</item>
+      <item id="tw-ps33" children="tw-ps34">S</item>
+      <item id="tw-ps34" children="tw-ps14 tw-ps35">VP</item>
+      <item id="tw-ps35" children="tw-ps15 tw-ps16">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw5" head="tw4">ref</item>
+      <item id="tw-ds6" dep="tw10" head="tw4">acl:relcl</item>
+      <item id="tw-ds7" dep="tw4" head="tw10">dobj</item>
+      <item id="tw-ds8" dep="tw9" head="tw10">nsubj</item>
+      <item id="tw-ds9" dep="tw6" head="tw9">det</item>
+      <item id="tw-ds10" dep="tw7" head="tw9">compound</item>
+      <item id="tw-ds11" dep="tw8" head="tw9">amod</item>
+      <item id="tw-ds12" dep="tw12" head="tw10">dobj</item>
+      <item id="tw-ds13" dep="tw11" head="tw12">det</item>
+      <item id="tw-ds14" dep="tw13" head="tw12">ref</item>
+      <item id="tw-ds15" dep="tw14" head="tw12">acl:relcl</item>
+      <item id="tw-ds16" dep="tw12" head="tw14">nsubj</item>
+      <item id="tw-ds17" dep="tw16" head="tw14">dobj</item>
+      <item id="tw-ds18" dep="tw15" head="tw16">det</item>
+    </tier>
+  </igt>
+  <igt id="igt196-3" doc-id="196" line-range="1544-1546" tag-types="L G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="nld" xsi:type="olac:language">Dutch</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1544" tag="L">         b.     Karl hielp de mijnwerkers die de boswachter vond</item>
+      <item id="r2" line="1545" tag="G">                Karl helped the mineworkers who the forester found-sg</item>
+      <item id="r3" line="1546" tag="T">                `Karl helped the mineworkers who the forester found.'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1544" tag="L">b.     Karl hielp de mijnwerkers die de boswachter vond</item>
+      <item id="c2" alignment="r2" line="1545" tag="G">       Karl helped the mineworkers who the forester found-sg</item>
+      <item id="c3" alignment="r3" line="1546" tag="T">       `Karl helped the mineworkers who the forester found.'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1544" tag="L">Karl hielp de mijnwerkers die de boswachter vond</item>
+      <item id="n2" alignment="c2" line="1545" tag="G">Karl helped the mineworkers who the forester found-sg</item>
+      <item id="n3" alignment="c3" line="1546" tag="T">Karl helped the mineworkers who the forester found.</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:4]" />
+      <item id="w2" segmentation="p1[5:10]" />
+      <item id="w3" segmentation="p1[11:13]" />
+      <item id="w4" segmentation="p1[14:25]" />
+      <item id="w5" segmentation="p1[26:29]" />
+      <item id="w6" segmentation="p1[30:32]" />
+      <item id="w7" segmentation="p1[33:43]" />
+      <item id="w8" segmentation="p1[44:48]" />
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1" />
+      <item id="m2" segmentation="w2" />
+      <item id="m3" segmentation="w3" />
+      <item id="m4" segmentation="w4" />
+      <item id="m5" segmentation="w5" />
+      <item id="m6" segmentation="w6" />
+      <item id="m7" segmentation="w7" />
+      <item id="m8" segmentation="w8" />
+    </tier>
+    <tier id="g" type="glosses" alignment="m" content="gw">
+      <item id="g1" alignment="m1" content="gw1" />
+      <item id="g2" alignment="m2" content="gw2" />
+      <item id="g3" alignment="m3" content="gw3" />
+      <item id="g4" alignment="m4" content="gw4" />
+      <item id="g5" alignment="m5" content="gw5" />
+      <item id="g6" alignment="m6" content="gw6" />
+      <item id="g7" alignment="m7" content="gw7" />
+      <item id="g8" alignment="m8" content="gw8[0:5]" />
+      <item id="g9" alignment="m8" content="gw8[6:8]" />
+    </tier>
+    <tier id="gw" type="glosses" alignment="w" content="n">
+      <item id="gw1" alignment="w1" content="n2[0:4]" />
+      <item id="gw2" alignment="w2" content="n2[5:11]" />
+      <item id="gw3" alignment="w3" content="n2[12:15]" />
+      <item id="gw4" alignment="w4" content="n2[16:27]" />
+      <item id="gw5" alignment="w5" content="n2[28:31]" />
+      <item id="gw6" alignment="w6" content="n2[32:35]" />
+      <item id="gw7" alignment="w7" content="n2[36:44]" />
+      <item id="gw8" alignment="w8" content="n2[45:53]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">NOUN</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+      <item id="gw-pos3" alignment="gw3">DET</item>
+      <item id="gw-pos4" alignment="gw4">NOUN</item>
+      <item id="gw-pos5" alignment="gw5">PRON</item>
+      <item id="gw-pos6" alignment="gw6">DET</item>
+      <item id="gw-pos7" alignment="gw7">NOUN</item>
+      <item id="gw-pos8" alignment="gw8">VERB</item>
+    </tier>
+    <tier id="w-pos" type="pos" alignment="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="classifier" projected-from="gw-pos" projection-alignment="1to1" source="intent" />
+      </metadata>
+      <item id="w-pos1" alignment="w1">NOUN</item>
+      <item id="w-pos2" alignment="w2">VERB</item>
+      <item id="w-pos3" alignment="w3">DET</item>
+      <item id="w-pos4" alignment="w4">NOUN</item>
+      <item id="w-pos5" alignment="w5">PRON</item>
+      <item id="w-pos6" alignment="w6">DET</item>
+      <item id="w-pos7" alignment="w7">NOUN</item>
+      <item id="w-pos8" alignment="w8">VERB</item>
+    </tier>
+    <tier id="w-ps" type="phrase-structure" alignment="w" children="w-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="projection" projected-from="tw-ps" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ps1" alignment="w1">NNP</item>
+      <item id="w-ps2" alignment="w2">VBD</item>
+      <item id="w-ps3" alignment="w3">DT</item>
+      <item id="w-ps4" alignment="w4">NNS</item>
+      <item id="w-ps5" alignment="w5">WP</item>
+      <item id="w-ps6" alignment="w6">DT</item>
+      <item id="w-ps7" alignment="w7">NN</item>
+      <item id="w-ps8" alignment="w8">VBD</item>
+      <item id="w-ps9" children="w-ps10">ROOT</item>
+      <item id="w-ps10" children="w-ps11 w-ps12">S</item>
+      <item id="w-ps11" children="w-ps1">NP</item>
+      <item id="w-ps12" children="w-ps2 w-ps13">VP</item>
+      <item id="w-ps13" children="w-ps14 w-ps15">NP</item>
+      <item id="w-ps14" children="w-ps3 w-ps4">NP</item>
+      <item id="w-ps15" children="w-ps16 w-ps17">SBAR</item>
+      <item id="w-ps16" children="w-ps5">WHNP</item>
+      <item id="w-ps17" children="w-ps18 w-ps19">S</item>
+      <item id="w-ps18" children="w-ps6 w-ps7">NP</item>
+      <item id="w-ps19" children="w-ps8">VP</item>
+    </tier>
+    <tier id="w-ds" type="dependencies" dep="w" head="w">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:09" method="projection" projected-from="tw-ds" projection-alignment="heur" source="intent" />
+      </metadata>
+      <item id="w-ds1" dep="w2">root</item>
+      <item id="w-ds2" dep="w1" head="w2">nsubj</item>
+      <item id="w-ds3" dep="w4" head="w2">dobj</item>
+      <item id="w-ds4" dep="w3" head="w4">det</item>
+      <item id="w-ds5" dep="w5" head="w4">ref</item>
+      <item id="w-ds6" dep="w8" head="w4">acl:relcl</item>
+      <item id="w-ds7" dep="w4" head="w8">dobj</item>
+      <item id="w-ds8" dep="w7" head="w8">nsubj</item>
+      <item id="w-ds9" dep="w6" head="w7">det</item>
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:11]" />
+      <item id="tw3" segmentation="t1[12:15]" />
+      <item id="tw4" segmentation="t1[16:27]" />
+      <item id="tw5" segmentation="t1[28:31]" />
+      <item id="tw6" segmentation="t1[32:35]" />
+      <item id="tw7" segmentation="t1[36:44]" />
+      <item id="tw8" segmentation="t1[45:50]" />
+      <item id="tw9" segmentation="t1[50:51]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">NNS</item>
+      <item id="tw-ps5" alignment="tw5">WP</item>
+      <item id="tw-ps6" alignment="tw6">DT</item>
+      <item id="tw-ps7" alignment="tw7">NN</item>
+      <item id="tw-ps8" alignment="tw8">VBD</item>
+      <item id="tw-ps9" alignment="tw9">.</item>
+      <item id="tw-ps10" children="tw-ps11">ROOT</item>
+      <item id="tw-ps11" children="tw-ps12 tw-ps13 tw-ps9">S</item>
+      <item id="tw-ps12" children="tw-ps1">NP</item>
+      <item id="tw-ps13" children="tw-ps2 tw-ps14">VP</item>
+      <item id="tw-ps14" children="tw-ps15 tw-ps16">NP</item>
+      <item id="tw-ps15" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps16" children="tw-ps17 tw-ps18">SBAR</item>
+      <item id="tw-ps17" children="tw-ps5">WHNP</item>
+      <item id="tw-ps18" children="tw-ps19 tw-ps20">S</item>
+      <item id="tw-ps19" children="tw-ps6 tw-ps7">NP</item>
+      <item id="tw-ps20" children="tw-ps8">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw4" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">det</item>
+      <item id="tw-ds5" dep="tw5" head="tw4">ref</item>
+      <item id="tw-ds6" dep="tw8" head="tw4">acl:relcl</item>
+      <item id="tw-ds7" dep="tw4" head="tw8">dobj</item>
+      <item id="tw-ds8" dep="tw7" head="tw8">nsubj</item>
+      <item id="tw-ds9" dep="tw6" head="tw7">det</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:08" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g1" />
+      <item id="a2" source="tw2" target="g2" />
+      <item id="a3" source="tw3" target="g3" />
+      <item id="a4" source="tw4" target="g4" />
+      <item id="a5" source="tw5" target="g5" />
+      <item id="a6" source="tw6" target="g6" />
+      <item id="a7" source="tw7" target="g7" />
+      <item id="a8" source="tw8" target="g8" />
+    </tier>
+  </igt>
+  <igt id="igt196-4" doc-id="196" line-range="1660-1662" tag-types="L T T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="nld" xsi:type="olac:language">Dutch</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1660" tag="L">  (60)           Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="r2" line="1661" tag="T">         a.      Which patients did Jan mean that __ are visiting the doctors?</item>
+      <item id="r3" line="1662" tag="T+AL">         b.      Which patients did Jan mean that the doctors are visiting __?</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1660" tag="L">(60)           Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="c2" alignment="r2" line="1661" tag="T">       a.      Which patients did Jan mean that __ are visiting the doctors?</item>
+      <item id="c3" alignment="r3" line="1662" tag="T+AL">       b.      Which patients did Jan mean that the doctors are visiting __?</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1660" tag="L">Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="n2" alignment="c2" line="1661 1662" tag="T+AL">Which patients did Jan mean that __ are visiting the doctors? b.      Which patients did Jan mean that the doctors are visiting __?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:5]" />
+      <item id="tw2" segmentation="t1[6:14]" />
+      <item id="tw3" segmentation="t1[15:18]" />
+      <item id="tw4" segmentation="t1[19:22]" />
+      <item id="tw5" segmentation="t1[23:27]" />
+      <item id="tw6" segmentation="t1[28:32]" />
+      <item id="tw7" segmentation="t1[33:35]" />
+      <item id="tw8" segmentation="t1[36:39]" />
+      <item id="tw9" segmentation="t1[40:48]" />
+      <item id="tw10" segmentation="t1[49:52]" />
+      <item id="tw11" segmentation="t1[53:60]" />
+      <item id="tw12" segmentation="t1[60:61]" />
+      <item id="tw13" segmentation="t1[62:63]" />
+      <item id="tw14" segmentation="t1[63:64]" />
+      <item id="tw15" segmentation="t1[70:75]" />
+      <item id="tw16" segmentation="t1[76:84]" />
+      <item id="tw17" segmentation="t1[85:88]" />
+      <item id="tw18" segmentation="t1[89:92]" />
+      <item id="tw19" segmentation="t1[93:97]" />
+      <item id="tw20" segmentation="t1[98:102]" />
+      <item id="tw21" segmentation="t1[103:106]" />
+      <item id="tw22" segmentation="t1[107:114]" />
+      <item id="tw23" segmentation="t1[115:118]" />
+      <item id="tw24" segmentation="t1[119:127]" />
+      <item id="tw25" segmentation="t1[128:130]" />
+      <item id="tw26" segmentation="t1[130:131]" />
+    </tier>
+  </igt>
+  <igt id="igt196-5" doc-id="196" line-range="1691-1693" tag-types="L T T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1691" tag="L">  (61)             Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="r2" line="1692" tag="T">          a.       Who do you think __ fired the steel-worker without notice?</item>
+      <item id="r3" line="1693" tag="T+AL">          b.       Who do you think the steel-worker fired __ without notice?</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1691" tag="L">(61)             Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="c2" alignment="r2" line="1692" tag="T">        a.       Who do you think __ fired the steel-worker without notice?</item>
+      <item id="c3" alignment="r3" line="1693" tag="T+AL">        b.       Who do you think the steel-worker fired __ without notice?</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1691" tag="L">Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="n2" alignment="c2" line="1692 1693" tag="T+AL">Who do you think __ fired the steel-worker without notice? b.       Who do you think the steel-worker fired __ without notice?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:6]" />
+      <item id="tw3" segmentation="t1[7:10]" />
+      <item id="tw4" segmentation="t1[11:16]" />
+      <item id="tw5" segmentation="t1[17:19]" />
+      <item id="tw6" segmentation="t1[20:25]" />
+      <item id="tw7" segmentation="t1[26:29]" />
+      <item id="tw8" segmentation="t1[30:42]" />
+      <item id="tw9" segmentation="t1[43:50]" />
+      <item id="tw10" segmentation="t1[51:57]" />
+      <item id="tw11" segmentation="t1[57:58]" />
+      <item id="tw12" segmentation="t1[59:60]" />
+      <item id="tw13" segmentation="t1[60:61]" />
+      <item id="tw14" segmentation="t1[68:71]" />
+      <item id="tw15" segmentation="t1[72:74]" />
+      <item id="tw16" segmentation="t1[75:78]" />
+      <item id="tw17" segmentation="t1[79:84]" />
+      <item id="tw18" segmentation="t1[85:88]" />
+      <item id="tw19" segmentation="t1[89:101]" />
+      <item id="tw20" segmentation="t1[102:107]" />
+      <item id="tw21" segmentation="t1[108:110]" />
+      <item id="tw22" segmentation="t1[111:118]" />
+      <item id="tw23" segmentation="t1[119:125]" />
+      <item id="tw24" segmentation="t1[125:126]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBP</item>
+      <item id="tw-ps3" alignment="tw3">PRP</item>
+      <item id="tw-ps4" alignment="tw4">VB</item>
+      <item id="tw-ps5" alignment="tw5">VBP</item>
+      <item id="tw-ps6" alignment="tw6">VBN</item>
+      <item id="tw-ps7" alignment="tw7">DT</item>
+      <item id="tw-ps8" alignment="tw8">NN</item>
+      <item id="tw-ps9" alignment="tw9">IN</item>
+      <item id="tw-ps10" alignment="tw10">NN</item>
+      <item id="tw-ps11" alignment="tw11">.</item>
+      <item id="tw-ps12" alignment="tw12">SYM</item>
+      <item id="tw-ps13" alignment="tw13">.</item>
+      <item id="tw-ps14" alignment="tw14">WP</item>
+      <item id="tw-ps15" alignment="tw15">VBP</item>
+      <item id="tw-ps16" alignment="tw16">PRP</item>
+      <item id="tw-ps17" alignment="tw17">VB</item>
+      <item id="tw-ps18" alignment="tw18">DT</item>
+      <item id="tw-ps19" alignment="tw19">NN</item>
+      <item id="tw-ps20" alignment="tw20">VBD</item>
+      <item id="tw-ps21" alignment="tw21">VBN</item>
+      <item id="tw-ps22" alignment="tw22">IN</item>
+      <item id="tw-ps23" alignment="tw23">NN</item>
+      <item id="tw-ps24" alignment="tw24">.</item>
+      <item id="tw-ps25" children="tw-ps26">ROOT</item>
+      <item id="tw-ps26" children="tw-ps27 tw-ps28 tw-ps24">SBARQ</item>
+      <item id="tw-ps27" children="tw-ps1">WHNP</item>
+      <item id="tw-ps28" children="tw-ps2 tw-ps29 tw-ps30">SQ</item>
+      <item id="tw-ps29" children="tw-ps3">NP</item>
+      <item id="tw-ps30" children="tw-ps4 tw-ps31">VP</item>
+      <item id="tw-ps31" children="tw-ps5 tw-ps32">VP</item>
+      <item id="tw-ps32" children="tw-ps6 tw-ps33 tw-ps34">VP</item>
+      <item id="tw-ps33" children="tw-ps7 tw-ps8">NP</item>
+      <item id="tw-ps34" children="tw-ps9 tw-ps35">PP</item>
+      <item id="tw-ps35" children="tw-ps36 tw-ps39">NP</item>
+      <item id="tw-ps36" children="tw-ps37 tw-ps11 tw-ps38 tw-ps13">NP</item>
+      <item id="tw-ps37" children="tw-ps10">NP</item>
+      <item id="tw-ps38" children="tw-ps12">NP</item>
+      <item id="tw-ps39" children="tw-ps40 tw-ps41">SBAR</item>
+      <item id="tw-ps40" children="tw-ps14">WHNP</item>
+      <item id="tw-ps41" children="tw-ps42">S</item>
+      <item id="tw-ps42" children="tw-ps15 tw-ps43">VP</item>
+      <item id="tw-ps43" children="tw-ps44 tw-ps45">S</item>
+      <item id="tw-ps44" children="tw-ps16">NP</item>
+      <item id="tw-ps45" children="tw-ps17 tw-ps46">VP</item>
+      <item id="tw-ps46" children="tw-ps47">SBAR</item>
+      <item id="tw-ps47" children="tw-ps48 tw-ps49">S</item>
+      <item id="tw-ps48" children="tw-ps18 tw-ps19">NP</item>
+      <item id="tw-ps49" children="tw-ps20 tw-ps50">VP</item>
+      <item id="tw-ps50" children="tw-ps21 tw-ps51">VP</item>
+      <item id="tw-ps51" children="tw-ps22 tw-ps52">PP</item>
+      <item id="tw-ps52" children="tw-ps23">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw4">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw4">dobj</item>
+      <item id="tw-ds3" dep="tw2" head="tw4">aux</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">nsubj</item>
+      <item id="tw-ds5" dep="tw5" head="tw4">dep</item>
+      <item id="tw-ds6" dep="tw6" head="tw5">dep</item>
+      <item id="tw-ds7" dep="tw8" head="tw6">dobj</item>
+      <item id="tw-ds8" dep="tw7" head="tw8">det</item>
+      <item id="tw-ds9" dep="tw10" head="tw6">nmod:without</item>
+      <item id="tw-ds10" dep="tw9" head="tw10">case</item>
+      <item id="tw-ds11" dep="tw12" head="tw10">dep</item>
+      <item id="tw-ds12" dep="tw14" head="tw10">ref</item>
+      <item id="tw-ds13" dep="tw15" head="tw10">acl:relcl</item>
+      <item id="tw-ds14" dep="tw10" head="tw15">nsubj</item>
+      <item id="tw-ds15" dep="tw17" head="tw15">ccomp</item>
+      <item id="tw-ds16" dep="tw16" head="tw17">nsubj</item>
+      <item id="tw-ds17" dep="tw20" head="tw17">ccomp</item>
+      <item id="tw-ds18" dep="tw19" head="tw20">nsubj</item>
+      <item id="tw-ds19" dep="tw18" head="tw19">det</item>
+      <item id="tw-ds20" dep="tw21" head="tw20">dep</item>
+      <item id="tw-ds21" dep="tw23" head="tw21">nmod:without</item>
+      <item id="tw-ds22" dep="tw22" head="tw23">case</item>
+    </tier>
+  </igt>
+  <igt id="igt196-6" doc-id="196" line-range="1932-1936" tag-types="L T B B T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="nld" xsi:type="olac:language">Dutch</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1932" tag="L">  (73)    a.       Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="r2" line="1933" tag="T">          b.       Which patients did Jan mean that the doctors are visiting __?</item>
+      <item id="r3" line="1934" tag="B" />
+      <item id="r4" line="1935" tag="B" />
+      <item id="r5" line="1936" tag="T+AL">          c.       Which patients did Jan mean t that __ are visiting the doctors?</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1932" tag="L">(73)    a.       Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="c2" alignment="r2" line="1933" tag="T">        b.       Which patients did Jan mean that the doctors are visiting __?</item>
+      <item id="c3" alignment="r5" line="1936" tag="T+AL">        c.       Which patients did Jan mean t that __ are visiting the doctors?</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="1932" tag="L">a.       Welke patienten meende Jan dat de dokters bezochten?</item>
+      <item id="n2" alignment="c2" line="1933 1936" tag="T+AL">b.       Which patients did Jan mean that the doctors are visiting __? c.       Which patients did Jan mean t that __ are visiting the doctors?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[1:2]" />
+      <item id="tw3" segmentation="t1[9:14]" />
+      <item id="tw4" segmentation="t1[15:23]" />
+      <item id="tw5" segmentation="t1[24:27]" />
+      <item id="tw6" segmentation="t1[28:31]" />
+      <item id="tw7" segmentation="t1[32:36]" />
+      <item id="tw8" segmentation="t1[37:41]" />
+      <item id="tw9" segmentation="t1[42:45]" />
+      <item id="tw10" segmentation="t1[46:53]" />
+      <item id="tw11" segmentation="t1[54:57]" />
+      <item id="tw12" segmentation="t1[58:66]" />
+      <item id="tw13" segmentation="t1[67:69]" />
+      <item id="tw14" segmentation="t1[69:70]" />
+      <item id="tw15" segmentation="t1[71:72]" />
+      <item id="tw16" segmentation="t1[72:73]" />
+      <item id="tw17" segmentation="t1[80:85]" />
+      <item id="tw18" segmentation="t1[86:94]" />
+      <item id="tw19" segmentation="t1[95:98]" />
+      <item id="tw20" segmentation="t1[99:102]" />
+      <item id="tw21" segmentation="t1[103:107]" />
+      <item id="tw22" segmentation="t1[108:109]" />
+      <item id="tw23" segmentation="t1[110:114]" />
+      <item id="tw24" segmentation="t1[115:117]" />
+      <item id="tw25" segmentation="t1[118:121]" />
+      <item id="tw26" segmentation="t1[122:130]" />
+      <item id="tw27" segmentation="t1[131:134]" />
+      <item id="tw28" segmentation="t1[135:142]" />
+      <item id="tw29" segmentation="t1[142:143]" />
+    </tier>
+  </igt>
+  <igt id="igt196-7" doc-id="196" line-range="1987-1990" tag-types="L L T T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1987" tag="L">  (75)             Chi ha licenziato il metalmeccanico/il proprietario senza dare il</item>
+      <item id="r2" line="1988" tag="L">                   preavviso?</item>
+      <item id="r3" line="1989" tag="T">                   `Who fired the steel-worker/the owner without giving notice?'</item>
+      <item id="r4" line="1990" tag="T+AL">                   `Who did the steel-worker/the owner fire without giving notice?'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1987" tag="L">(75)             Chi ha licenziato il metalmeccanico/il proprietario senza dare il</item>
+      <item id="c2" alignment="r2" line="1988" tag="L">                 preavviso?</item>
+      <item id="c3" alignment="r3" line="1989" tag="T">                 `Who fired the steel-worker/the owner without giving notice?'</item>
+      <item id="c4" alignment="r4" line="1990" tag="T+AL">                 `Who did the steel-worker/the owner fire without giving notice?'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1,c2" line="1987 1988" tag="L">Chi ha licenziato il metalmeccanico/il proprietario senza dare il                  preavviso?</item>
+      <item id="n2" alignment="c3" line="1989" tag="T">Who fired the steel-worker/the owner without giving notice?</item>
+      <item id="n3" alignment="c4" line="1990" tag="T+AL">Who did the steel-worker/the owner fire without giving notice?</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+      <item id="t2" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:9]" />
+      <item id="tw3" segmentation="t1[10:13]" />
+      <item id="tw4" segmentation="t1[14:30]" />
+      <item id="tw5" segmentation="t1[31:36]" />
+      <item id="tw6" segmentation="t1[37:44]" />
+      <item id="tw7" segmentation="t1[45:51]" />
+      <item id="tw8" segmentation="t1[52:58]" />
+      <item id="tw9" segmentation="t1[58:59]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">DT</item>
+      <item id="tw-ps4" alignment="tw4">JJ</item>
+      <item id="tw-ps5" alignment="tw5">NN</item>
+      <item id="tw-ps6" alignment="tw6">IN</item>
+      <item id="tw-ps7" alignment="tw7">VBG</item>
+      <item id="tw-ps8" alignment="tw8">NN</item>
+      <item id="tw-ps9" alignment="tw9">.</item>
+      <item id="tw-ps10" children="tw-ps11">ROOT</item>
+      <item id="tw-ps11" children="tw-ps12 tw-ps13 tw-ps9">SBARQ</item>
+      <item id="tw-ps12" children="tw-ps1">WHNP</item>
+      <item id="tw-ps13" children="tw-ps14">SQ</item>
+      <item id="tw-ps14" children="tw-ps2 tw-ps15 tw-ps16">VP</item>
+      <item id="tw-ps15" children="tw-ps3 tw-ps4 tw-ps5">NP</item>
+      <item id="tw-ps16" children="tw-ps6 tw-ps17">PP</item>
+      <item id="tw-ps17" children="tw-ps18">S</item>
+      <item id="tw-ps18" children="tw-ps7 tw-ps19">VP</item>
+      <item id="tw-ps19" children="tw-ps8">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nmod</item>
+      <item id="tw-ds3" dep="tw5" head="tw2">dobj</item>
+      <item id="tw-ds4" dep="tw3" head="tw5">det</item>
+      <item id="tw-ds5" dep="tw4" head="tw5">amod</item>
+      <item id="tw-ds6" dep="tw7" head="tw2">advcl</item>
+      <item id="tw-ds7" dep="tw6" head="tw7">mark</item>
+      <item id="tw-ds8" dep="tw8" head="tw7">dobj</item>
+    </tier>
+  </igt>
+  <igt id="igt196-8" doc-id="196" line-range="1992-1994" tag-types="L L T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="1992" tag="L">  (76)             Chi pensi abbia licenziato il metalmeccanico/il proprietario sensa</item>
+      <item id="r2" line="1993" tag="L">                   preavviso?</item>
+      <item id="r3" line="1994" tag="T">                   `Who do you think fired...'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="1992" tag="L">(76)             Chi pensi abbia licenziato il metalmeccanico/il proprietario sensa</item>
+      <item id="c2" alignment="r2" line="1993" tag="L">                 preavviso?</item>
+      <item id="c3" alignment="r3" line="1994" tag="T">                 `Who do you think fired...'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1,c2" line="1992 1993" tag="L">Chi pensi abbia licenziato il metalmeccanico/il proprietario sensa                  preavviso?</item>
+      <item id="n2" alignment="c3" line="1994" tag="T">Who do you think fired...</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:6]" />
+      <item id="tw3" segmentation="t1[7:10]" />
+      <item id="tw4" segmentation="t1[11:16]" />
+      <item id="tw5" segmentation="t1[17:22]" />
+      <item id="tw6" segmentation="t1[22:25]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBP</item>
+      <item id="tw-ps3" alignment="tw3">PRP</item>
+      <item id="tw-ps4" alignment="tw4">VB</item>
+      <item id="tw-ps5" alignment="tw5">VBN</item>
+      <item id="tw-ps6" alignment="tw6">:</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10 tw-ps6">SBARQ</item>
+      <item id="tw-ps9" children="tw-ps1">WHNP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11 tw-ps12">SQ</item>
+      <item id="tw-ps11" children="tw-ps3">NP</item>
+      <item id="tw-ps12" children="tw-ps4 tw-ps13">VP</item>
+      <item id="tw-ps13" children="tw-ps5">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw4">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw4">dobj</item>
+      <item id="tw-ds3" dep="tw2" head="tw4">aux</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">nsubj</item>
+      <item id="tw-ds5" dep="tw5" head="tw4">dep</item>
+    </tier>
+  </igt>
+  <igt id="igt196-9" doc-id="196" line-range="2022-2023" tag-types="L G">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="2022" tag="L">  (79)   a.     tuo fratello, a   cui mi domando che storie abbiano raccontato</item>
+      <item id="r2" line="2023" tag="G">                your brother,     to whom myself I-ask which stories they have told</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="2022" tag="L">(79)   a.     tuo fratello, a   cui mi domando che storie abbiano raccontato</item>
+      <item id="c2" alignment="r2" line="2023" tag="G">              your brother,     to whom myself I-ask which stories they have told</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="2022" tag="L">tuo fratello, a   cui mi domando che storie abbiano raccontato</item>
+      <item id="n2" alignment="c2" line="2023" tag="G">your brother,     to whom myself I-ask which stories they have told</item>
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:36:10" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[0:4]" />
+      <item id="gw2" content="n2[5:13]" />
+      <item id="gw3" content="n2[18:20]" />
+      <item id="gw4" content="n2[21:25]" />
+      <item id="gw5" content="n2[26:32]" />
+      <item id="gw6" content="n2[33:38]" />
+      <item id="gw7" content="n2[39:44]" />
+      <item id="gw8" content="n2[45:52]" />
+      <item id="gw9" content="n2[53:57]" />
+      <item id="gw10" content="n2[58:62]" />
+      <item id="gw11" content="n2[63:67]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">ADP</item>
+      <item id="gw-pos4" alignment="gw4">PRON</item>
+      <item id="gw-pos5" alignment="gw5">PRON</item>
+      <item id="gw-pos6" alignment="gw6">VERB</item>
+      <item id="gw-pos7" alignment="gw7">PRON</item>
+      <item id="gw-pos8" alignment="gw8">NOUN</item>
+      <item id="gw-pos9" alignment="gw9">PRON</item>
+      <item id="gw-pos10" alignment="gw10">VERB</item>
+      <item id="gw-pos11" alignment="gw11">VERB</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:3]" />
+      <item id="w2" segmentation="p1[4:12]" />
+      <item id="w3" segmentation="p1[12:13]" />
+      <item id="w4" segmentation="p1[14:15]" />
+      <item id="w5" segmentation="p1[18:21]" />
+      <item id="w6" segmentation="p1[22:24]" />
+      <item id="w7" segmentation="p1[25:32]" />
+      <item id="w8" segmentation="p1[33:36]" />
+      <item id="w9" segmentation="p1[37:43]" />
+      <item id="w10" segmentation="p1[44:51]" />
+      <item id="w11" segmentation="p1[52:62]" />
+    </tier>
+  </igt>
+  <igt id="igt196-10" doc-id="196" line-range="2024-2026" tag-types="L G G">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="2024" tag="L">         b.   *tuo fratello, a    cui temo la posibilità che abbiano raccontato tutto</item>
+      <item id="r2" line="2025" tag="G">                your brother,      to whom I fear the possibility that they have told</item>
+      <item id="r3" line="2026" tag="G">                everything</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="2024" tag="L">b.   *tuo fratello, a    cui temo la posibilità che abbiano raccontato tutto</item>
+      <item id="c2" alignment="r2" line="2025" tag="G">       your brother,      to whom I fear the possibility that they have told</item>
+      <item id="c3" alignment="r3" line="2026" tag="G">       everything</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="*" line="2024" tag="L">tuo fratello, a    cui temo la posibilità che abbiano raccontato tutto</item>
+      <item id="n2" alignment="c2" line="2025" tag="G">  your brother,      to whom I fear the possibility that they have told</item>
+      <item id="n3" alignment="c3" line="2026" tag="G">  everything</item>
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:36:10" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[2:6]" />
+      <item id="gw2" content="n2[7:15]" />
+      <item id="gw3" content="n2[21:23]" />
+      <item id="gw4" content="n2[24:28]" />
+      <item id="gw5" content="n2[29:30]" />
+      <item id="gw6" content="n2[31:35]" />
+      <item id="gw7" content="n2[36:39]" />
+      <item id="gw8" content="n2[40:51]" />
+      <item id="gw9" content="n2[52:56]" />
+      <item id="gw10" content="n2[57:61]" />
+      <item id="gw11" content="n2[62:66]" />
+      <item id="gw12" content="n2[67:71]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:36:10" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">PRON</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">ADP</item>
+      <item id="gw-pos4" alignment="gw4">PRON</item>
+      <item id="gw-pos5" alignment="gw5">PRON</item>
+      <item id="gw-pos6" alignment="gw6">NOUN</item>
+      <item id="gw-pos7" alignment="gw7">DET</item>
+      <item id="gw-pos8" alignment="gw8">NOUN</item>
+      <item id="gw-pos9" alignment="gw9">ADP</item>
+      <item id="gw-pos10" alignment="gw10">PRON</item>
+      <item id="gw-pos11" alignment="gw11">VERB</item>
+      <item id="gw-pos12" alignment="gw12">VERB</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="*" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:3]" />
+      <item id="w2" segmentation="p1[4:12]" />
+      <item id="w3" segmentation="p1[12:13]" />
+      <item id="w4" segmentation="p1[14:15]" />
+      <item id="w5" segmentation="p1[19:22]" />
+      <item id="w6" segmentation="p1[23:27]" />
+      <item id="w7" segmentation="p1[28:30]" />
+      <item id="w8" segmentation="p1[31:41]" />
+      <item id="w9" segmentation="p1[42:45]" />
+      <item id="w10" segmentation="p1[46:53]" />
+      <item id="w11" segmentation="p1[54:64]" />
+      <item id="w12" segmentation="p1[65:70]" />
+    </tier>
+  </igt>
+  <igt id="igt196-11" doc-id="196" line-range="2044-2047" tag-types="L T B T+AL">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="ita" xsi:type="olac:language">Italian</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="2044" tag="L">  (80)   a.    Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="r2" line="2045" tag="T">         b.    Who do you think __ fired the steel-worker without warning</item>
+      <item id="r3" line="2046" tag="B" />
+      <item id="r4" line="2047" tag="T+AL">         c.    Who do you think pro i fired __ the steel-workeri without warning</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="2044" tag="L">(80)   a.    Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="c2" alignment="r2" line="2045" tag="T">       b.    Who do you think __ fired the steel-worker without warning</item>
+      <item id="c3" alignment="r4" line="2047" tag="T+AL">       c.    Who do you think pro i fired __ the steel-workeri without warning</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="2044" tag="L">a.    Chi pensi abbia licenziato il metalmeccanico sensa preavviso?</item>
+      <item id="n2" alignment="c2" line="2045 2047" tag="T+AL">b.    Who do you think __ fired the steel-worker without warning c.    Who do you think pro i fired __ the steel-workeri without warning</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n2" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:1]" />
+      <item id="tw2" segmentation="t1[1:2]" />
+      <item id="tw3" segmentation="t1[6:9]" />
+      <item id="tw4" segmentation="t1[10:12]" />
+      <item id="tw5" segmentation="t1[13:16]" />
+      <item id="tw6" segmentation="t1[17:22]" />
+      <item id="tw7" segmentation="t1[23:25]" />
+      <item id="tw8" segmentation="t1[26:31]" />
+      <item id="tw9" segmentation="t1[32:35]" />
+      <item id="tw10" segmentation="t1[36:48]" />
+      <item id="tw11" segmentation="t1[49:56]" />
+      <item id="tw12" segmentation="t1[57:64]" />
+      <item id="tw13" segmentation="t1[65:66]" />
+      <item id="tw14" segmentation="t1[66:67]" />
+      <item id="tw15" segmentation="t1[71:74]" />
+      <item id="tw16" segmentation="t1[75:77]" />
+      <item id="tw17" segmentation="t1[78:81]" />
+      <item id="tw18" segmentation="t1[82:87]" />
+      <item id="tw19" segmentation="t1[88:91]" />
+      <item id="tw20" segmentation="t1[92:93]" />
+      <item id="tw21" segmentation="t1[94:99]" />
+      <item id="tw22" segmentation="t1[100:102]" />
+      <item id="tw23" segmentation="t1[103:106]" />
+      <item id="tw24" segmentation="t1[107:120]" />
+      <item id="tw25" segmentation="t1[121:128]" />
+      <item id="tw26" segmentation="t1[129:136]" />
+    </tier>
+  </igt>
+</xigt-corpus>

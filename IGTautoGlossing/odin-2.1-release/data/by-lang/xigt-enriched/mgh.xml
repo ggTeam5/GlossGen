@@ -1,0 +1,163 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3036-3" doc-id="3036" line-range="162-164" tag-types="L+LN G T">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="mgh" xsi:type="olac:language">Makua</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="162" tag="L+LN">    (4) a. Aráárima a-n-líh-íre        mpáni?                                                       Makua</item>
+      <item id="r2" line="163" tag="G">           Araarima SM - OM-feed-T / A who</item>
+      <item id="r3" line="164" tag="T">           `Who did Araarima feed?</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="162" tag="L+LN">(4) a. Aráárima a-n-líh-íre        mpáni?                                                       Makua</item>
+      <item id="c2" alignment="r2" line="163" tag="G">       Araarima SM - OM-feed-T / A who</item>
+      <item id="c3" alignment="r3" line="164" tag="T">       `Who did Araarima feed?</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="162" tag="L">Aráárima a-n-líh-íre        mpáni?</item>
+      <item id="n2" alignment="c2" line="163" tag="G">Araarima SM-OM-feed-T / A who</item>
+      <item id="n3" alignment="c3" line="164" tag="T">Who did Araarima feed?</item>
+      <item id="n4" alignment="c1" line="162" tag="M+LN">Makua</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:8]" />
+      <item id="w2" segmentation="p1[9:20]" />
+      <item id="w3" segmentation="p1[28:33]" />
+      <item id="w4" segmentation="p1[33:34]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n3" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:3]" />
+      <item id="tw2" segmentation="t1[4:7]" />
+      <item id="tw3" segmentation="t1[8:16]" />
+      <item id="tw4" segmentation="t1[17:21]" />
+      <item id="tw5" segmentation="t1[21:22]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:59" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">WP</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">NNP</item>
+      <item id="tw-ps4" alignment="tw4">VB</item>
+      <item id="tw-ps5" alignment="tw5">.</item>
+      <item id="tw-ps6" children="tw-ps7">ROOT</item>
+      <item id="tw-ps7" children="tw-ps8 tw-ps9 tw-ps5">SBARQ</item>
+      <item id="tw-ps8" children="tw-ps1">WHNP</item>
+      <item id="tw-ps9" children="tw-ps2 tw-ps10 tw-ps11">SQ</item>
+      <item id="tw-ps10" children="tw-ps3">NP</item>
+      <item id="tw-ps11" children="tw-ps4">VP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:59" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw4">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw4">dobj</item>
+      <item id="tw-ds3" dep="tw2" head="tw4">aux</item>
+      <item id="tw-ds4" dep="tw3" head="tw4">nsubj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:59" method="heur" source="intent" />
+      </metadata>
+      <item id="a1" source="tw1" target="g7" />
+      <item id="a2" source="tw3" target="g1" />
+      <item id="a3" source="tw4" target="g4" />
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:44:59" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[0:8]" />
+      <item id="gw2" content="n2[9:21]" />
+      <item id="gw3" content="n2[22:23]" />
+      <item id="gw4" content="n2[24:25]" />
+      <item id="gw5" content="n2[26:29]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:59" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">DET</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">PUNC</item>
+      <item id="gw-pos4" alignment="gw4">DET</item>
+      <item id="gw-pos5" alignment="gw5">PRON</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:44:59" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1" />
+      <item id="g2" content="gw2[0:2]" />
+      <item id="g3" content="gw2[3:5]" />
+      <item id="g4" content="gw2[6:10]" />
+      <item id="g5" content="gw2[11:12]" />
+      <item id="g6" content="gw4" />
+      <item id="g7" content="gw5" />
+    </tier>
+  </igt>
+  <igt id="igt3036-4" doc-id="3036" line-range="166-167" tag-types="L G+CN+EX">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="mgh" xsi:type="olac:language">Makua</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="166" tag="L">        b. *Aráárima a-líh-íre    mpáni?</item>
+      <item id="r2" line="167" tag="G+CN+EX">           Araarima SM-feed-T / A who                                                    human object</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="166" tag="L">b. *Aráárima a-líh-íre    mpáni?</item>
+      <item id="c2" alignment="r2" line="167" tag="G+CN+EX">   Araarima SM-feed-T / A who                                                    human object</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" judgment="*" line="166" tag="L">Aráárima a-líh-íre    mpáni?</item>
+      <item id="n2" alignment="c2" line="167" tag="G+CN+EX">Araarima SM-feed-T / A who                                                    human object</item>
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:44:59" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n2[0:8]" />
+      <item id="gw2" content="n2[9:18]" />
+      <item id="gw3" content="n2[19:20]" />
+      <item id="gw4" content="n2[21:22]" />
+      <item id="gw5" content="n2[23:26]" />
+      <item id="gw6" content="n2[78:83]" />
+      <item id="gw7" content="n2[84:90]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:44:59" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">DET</item>
+      <item id="gw-pos2" alignment="gw2">NOUN</item>
+      <item id="gw-pos3" alignment="gw3">PUNC</item>
+      <item id="gw-pos4" alignment="gw4">DET</item>
+      <item id="gw-pos5" alignment="gw5">PRON</item>
+      <item id="gw-pos6" alignment="gw6">ADJ</item>
+      <item id="gw-pos7" alignment="gw7">VERB</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n1" judgment="*" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:8]" />
+      <item id="w2" segmentation="p1[9:18]" />
+      <item id="w3" segmentation="p1[22:27]" />
+      <item id="w4" segmentation="p1[27:28]" />
+    </tier>
+  </igt>
+</xigt-corpus>

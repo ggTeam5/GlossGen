@@ -1,0 +1,111 @@
+<xigt-corpus xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:olac="http://www.language-archives.org/OLAC/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <igt id="igt3537-360" doc-id="3537" line-range="10860-10865" tag-types="M+CR M+LN+CR+EX B L+DB G+DB T+DB+SY">
+    <metadata>
+      <meta id="meta1">
+        <dc:subject olac:code="mkg" xsi:type="olac:language">Chi</dc:subject>
+        <dc:language olac:code="en" xsi:type="olac:language">English</dc:language>
+      </meta>
+    </metadata>
+    <tier id="r" type="odin" state="raw">
+      <item id="r1" line="10860" tag="M+CR">                          MLS</item>
+      <item id="r2" line="10861" tag="M+LN+CR+EX">  (8) M   APUDUNGUN             FORMS</item>
+      <item id="r3" line="10862" tag="B" />
+      <item id="r4" line="10863" tag="L+DB">        a. pe-e-n                            b. pe-e-yu</item>
+      <item id="r5" line="10864" tag="G+DB">           see-E-1sIND                          see-E-1dIND</item>
+      <item id="r6" line="10865" tag="T+DB+SY">           `yous saw me'                        `I saw yous'</item>
+    </tier>
+    <tier id="c" type="odin" alignment="r" state="cleaned">
+      <item id="c1" alignment="r1" line="10860 10861" tag="M+LN+EX">(8) M   APUDUNGUN       MLS   FORMS</item>
+      <item id="c2" alignment="r4" line="10863" tag="L+DB">a. pe-e-n                            b. pe-e-yu</item>
+      <item id="c3" alignment="r5" line="10864" tag="G+DB">   see-E-1sIND                          see-E-1dIND</item>
+      <item id="c4" alignment="r6" line="10865" tag="T+DB+SY">   `yous saw me'                        `I saw yous'</item>
+    </tier>
+    <tier id="n" type="odin" alignment="c" state="normalized">
+      <item id="n1" alignment="c1" line="10860 10861" tag="M+LN+EX">(8) M   APUDUNGUN       MLS   FORMS</item>
+      <item id="n2" alignment="c2" line="10863" tag="L+DB">pe-e-n                            b. pe-e-yu</item>
+      <item id="n3" alignment="c3" line="10864" tag="G+DB">see-E-1sIND                          see-E-1dIND</item>
+      <item id="n4" alignment="c4" line="10865" tag="T+DB+SY">yous saw me'                        `I saw yous</item>
+    </tier>
+    <tier id="p" type="phrases" content="n">
+      <item id="p1" content="n2" />
+    </tier>
+    <tier id="w" type="words" segmentation="p">
+      <item id="w1" segmentation="p1[0:6]" />
+      <item id="w2" segmentation="p1[34:35]" />
+      <item id="w3" segmentation="p1[35:36]" />
+      <item id="w4" segmentation="p1[37:44]" />
+    </tier>
+    <tier id="t" type="translations" alignment="p" content="n">
+      <item id="t1" alignment="p1" content="n4" />
+    </tier>
+    <tier id="tw" type="words" segmentation="t">
+      <item id="tw1" segmentation="t1[0:4]" />
+      <item id="tw2" segmentation="t1[5:8]" />
+      <item id="tw3" segmentation="t1[9:12]" />
+      <item id="tw4" segmentation="t1[36:38]" />
+      <item id="tw5" segmentation="t1[39:42]" />
+      <item id="tw6" segmentation="t1[43:47]" />
+    </tier>
+    <tier id="tw-ps" type="phrase-structure" alignment="tw" children="tw-ps">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:48:52" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ps1" alignment="tw1">NNS</item>
+      <item id="tw-ps2" alignment="tw2">VBD</item>
+      <item id="tw-ps3" alignment="tw3">NN</item>
+      <item id="tw-ps4" alignment="tw4">NNS</item>
+      <item id="tw-ps5" alignment="tw5">VBD</item>
+      <item id="tw-ps6" alignment="tw6">NNS</item>
+      <item id="tw-ps7" children="tw-ps8">ROOT</item>
+      <item id="tw-ps8" children="tw-ps9 tw-ps10">S</item>
+      <item id="tw-ps9" children="tw-ps1">NP</item>
+      <item id="tw-ps10" children="tw-ps2 tw-ps11">VP</item>
+      <item id="tw-ps11" children="tw-ps12">SBAR</item>
+      <item id="tw-ps12" children="tw-ps13 tw-ps14">S</item>
+      <item id="tw-ps13" children="tw-ps3 tw-ps4">NP</item>
+      <item id="tw-ps14" children="tw-ps5 tw-ps15">VP</item>
+      <item id="tw-ps15" children="tw-ps6">NP</item>
+    </tier>
+    <tier id="tw-ds" type="dependencies" dep="tw" head="tw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:48:52" method="stanford-parser" source="intent" />
+      </metadata>
+      <item id="tw-ds1" dep="tw2">root</item>
+      <item id="tw-ds2" dep="tw1" head="tw2">nsubj</item>
+      <item id="tw-ds3" dep="tw5" head="tw2">ccomp</item>
+      <item id="tw-ds4" dep="tw4" head="tw5">nsubj</item>
+      <item id="tw-ds5" dep="tw3" head="tw4">compound</item>
+      <item id="tw-ds6" dep="tw6" head="tw5">dobj</item>
+    </tier>
+    <tier id="a" type="bilingual-alignments" source="tw" target="g">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:48:52" method="heur" source="intent" />
+      </metadata>
+    </tier>
+    <tier id="gw" type="glosses" content="n">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:48:52" token-type="word" />
+      </metadata>
+      <item id="gw1" content="n3[0:11]" />
+      <item id="gw2" content="n3[37:48]" />
+    </tier>
+    <tier id="gw-pos" type="pos" alignment="gw">
+      <metadata type="intent-meta">
+        <meta type="data-provenance" date="2016-03-04T03:48:52" method="classifier" source="intent" />
+      </metadata>
+      <item id="gw-pos1" alignment="gw1">VERB</item>
+      <item id="gw-pos2" alignment="gw2">VERB</item>
+    </tier>
+    <tier id="g" type="glosses" content="gw">
+      <metadata type="intent-meta">
+        <meta type="extended-data" date="2016-03-04T03:48:52" token-type="sub-word" />
+      </metadata>
+      <item id="g1" content="gw1[0:3]" />
+      <item id="g2" content="gw1[4:5]" />
+      <item id="g3" content="gw1[6:11]" />
+      <item id="g4" content="gw2[0:3]" />
+      <item id="g5" content="gw2[4:5]" />
+      <item id="g6" content="gw2[6:11]" />
+    </tier>
+  </igt>
+</xigt-corpus>
