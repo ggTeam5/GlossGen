@@ -51,25 +51,37 @@ class IgtGlosser:
         return len(self.xc_igts)
 
     def load_corpus(self, xigtcorpus):
-        print("------------------------------------------")
-        print(xigtcorpus,xigtcorpus.igts)
+        # print("------------------------------------------")
+        # print(xigtcorpus)
+        # print("-----------------start---------------------")
+        # print(xigtcorpus.igts)
+        # print("------------------end---------------------")
         self.xc_igts = xigtcorpus.igts
         sys.stderr.write("Corpus size t=0: " + str(len(self.xc_igts)) + "\n")
         nonempty_igt = set()
         aligned_igt = set()
         removed = []
         for igt in self.xc_igts:
+            print("--------------------igt-forSchleife-start------------------")
+            print(igt)
+            print(igt.get("r"))
+            print("--------------------igt-forSchleife-end------------------")
             if igt.get('g') == None:
+                print("1. if stmt")
                 sys.stderr.write("IGT " + igt.id + " HAS NO GLOSS TIER...SKIPPING...\n")
                 removed.append(igt)
             elif igt.get('m') == None:
+                print("2. if stmt")
                 sys.stderr.write("IGT " + igt.id + " HAS NO MORPHEME TIER...SKIPPING...\n")
                 removed.append(igt)
             elif igt.get('p') == None:
+                print("3. if stmt")
                 sys.stderr.write("IGT " + igt.id + " HAS NO PHRASES TIER...SKIPPING...\n")
                 removed.append(igt)
             else:
+                print("else stmt")
                 sentence = self.get_value(igt, 'p', 'p1')
+                print("after self.get_value")
                 if sentence not in nonempty_igt:
                     nonempty_igt.add(sentence)
                     if igt.get('a') != None:
@@ -564,8 +576,9 @@ class IgtGlosser:
         gram_seen = [0, 0, 0, 0]
         gram_unseen = [0, 0, 0, 0]
         errors = [dict(), dict(), dict()]
-
+        print("len(set): ",len(set))
         for index in range(len(set)):
+            print("iteration: ",index)
             igt = self.xc_igts[set[index]]
             pred = preds[index]
             gold = golds[index]
@@ -584,11 +597,16 @@ class IgtGlosser:
             results += "\nGrams--" + str(gram_res[0][1]) + "/" + str(gram_res[0][0])
             results += "\tno_pred=" + str(gram_res[0][3]) + self._format_EA(gram_res)
             results += self.format_igt(igt, pred, sg_pred, tg_pred, gold, gold_seen)
+            # print("----------------results-start------------------")
+            # print(results)
+            # print("----------------results-end--------------------")
         m_acc = morph_results[1] / (morph_results[0] * 1.0)
         stem_prec = str(stem_results[1] / (stem_results[1] + stem_results[2] * 1.0))
         stem_recl = 0
         if stem_results[0] != 0:
+            print("stem_result[0] != 0  --> entered if stmt. stem_results: ",stem_results)
             stem_recl = str(stem_results[1] / stem_results[0] * 1.0)
+        # print("gram_results: ",gram_results)
         gram_prec = str(gram_results[1] / (gram_results[1] + gram_results[2] * 1.0))
         gram_recl = 0
         if gram_results[0] != 0:
