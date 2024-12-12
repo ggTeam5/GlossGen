@@ -23,9 +23,10 @@ def parse_txt_to_dict(txt_file):
             # Start of a new IGT block
             if current_igt:
                 data.append(current_igt)
+            splitted_line = line.split()
             current_igt = {
-                'id': line.split()[1],
-                'lines': [],
+                'id': splitted_line[1],
+                'lines': [splitted_line[2],splitted_line[3]], #-->verändert   #TODO nochmal checken
                 'language': None,  # Default to None, can be set from metadata later
                 'language_code': None  # Language code can be extracted from metadata
             }
@@ -33,8 +34,8 @@ def parse_txt_to_dict(txt_file):
         elif line.startswith("line"):
             line_parts = line.split("tag=")
             if len(line_parts) > 1:
-                tag = line_parts[1].split()[0]
-                content = line.split(":")[-1].strip()
+                tag = line_parts[1].split(":")[0].strip()
+                content = line.split(":")[-1]
                 current_igt['lines'].append({
                     'tag': tag,
                     'content': content
@@ -42,7 +43,9 @@ def parse_txt_to_dict(txt_file):
 
         elif line.startswith("language:"):
             # Extract language information from metadata lines
-            current_igt['language'] = line.split(":")[-1].strip()
+            language_and_code = line.split(":")[-1].strip()
+            current_igt['language'] = " ".join(language_and_code.split()[0:-1])
+            current_igt['language_code'] = language_and_code.split("(")[-1].split(")")[0].strip()
 
     if current_igt:
         data.append(current_igt)
