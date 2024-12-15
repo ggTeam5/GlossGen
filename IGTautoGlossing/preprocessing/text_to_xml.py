@@ -1,6 +1,18 @@
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
+#separates the types out of the first line of a new text block
+#return: types as a string
+def getTypesHelper(separated_line):
+    resString = ""
+    if len(separated_line) > 4:
+        for element in separated_line[4:]:
+            if(resString == ""):
+                resString = resString + element
+            else:
+                resString = resString + " " + element
+    return resString
+
 def parse_txt_to_dict(txt_file):
     """
     Parse the txt file and extract information into a dictionary format.
@@ -25,7 +37,9 @@ def parse_txt_to_dict(txt_file):
                 data.append(current_igt)
             splitted_line = line.split()
             current_igt = {
-                'id': splitted_line[1],
+                'id': splitted_line[1].split("=")[1].strip(),
+                'doc-id': splitted_line[0].split("=")[1].strip(),
+                'tag-types': getTypesHelper(splitted_line),
                 'lines': [splitted_line[2],splitted_line[3]], #-->verändert   #TODO nochmal checken
                 'language': None,  # Default to None, can be set from metadata later
                 'language_code': None  # Language code can be extracted from metadata
@@ -54,14 +68,20 @@ def parse_txt_to_dict(txt_file):
 
 def create_xml_from_dict(data):
     """
-    Convert parsed dictionary data into XML structure, flexible for multiple languages.
+    Convert parsed dictionary data into XML structure
     """
-    root = ET.Element("xigt-corpus", xmlns_dc="http://purl.org/dc/elements/1.1/",
-                      xmlns_olac="http://www.language-archives.org/OLAC/1.1/",
-                      xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance")
+    # root = ET.Element("xigt-corpus", xmlns_dc="http://purl.org/dc/elements/1.1/",
+    #                   xmlns_olac="http://www.language-archives.org/OLAC/1.1/",
+    #                   xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance")
+
+    ET.register_namespace("dc", "http://purl.org/dc/elements/1.1/")
+    ET.register_namespace("olac", "http://www.language-archives.org/OLAC/1.1/")
+    ET.register_namespace("xsi", "http://www.w3.org/2001/XMLSchema-instance")
+
+    root = ET.Element("xigt-corpus")
 
     for entry in data:
-        igt = ET.SubElement(root, "igt", id=entry['id'], doc_id=entry['id'])
+        igt = ET.SubElement(root, "igt", id=entry['id'], **{'doc-id': entry['doc-id']}, **{'line-range': (""+entry['lines'][0]+" "+entry['lines'][1])},**{'tag-types': entry['tag-types']}) #old line: # igt = ET.SubElement(root, "igt", id=entry['id'], doc_id=entry['doc-id'], line_range=(""+entry['lines'][0]+" "+entry['lines'][1]))
         metadata = ET.SubElement(igt, "metadata")
         meta = ET.SubElement(metadata, "meta", id="meta1")
         
@@ -118,3 +138,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#current problems #TODO:
+# - output in file is just one line of code
+# - lines in the tiers are not correct (is: 1,2,3 ; but should be: correct_line1,correct_line2,correct_line3)
+# - abbreviation is too much in the <meta> part

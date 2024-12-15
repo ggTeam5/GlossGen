@@ -53,6 +53,3 @@ with open(outfile, 'w') as out:
     sys.stderr.write('PRINTING MAPS...\n')
     out.write(IG.maps_tostr())
     out.close()
-
-
-
