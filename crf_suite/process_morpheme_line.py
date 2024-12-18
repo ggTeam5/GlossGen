@@ -2,21 +2,24 @@ import string
 
 #TODO: question: how about stems with only upper case letters (e.g. FIFA, WHO, TUM, etc.)
 
+#TODO: 
+# what if ",." --> should be "stem,.stem" ?
 def processGloss(gloss):
-    if gloss.isupper() or (gloss in string.punctuation):
+    punctuations = string.punctuation + "«?»..."
+    containsLetter = False
+    for char in gloss:
+        if not char in punctuations:
+            containsLetter = True
+    if not containsLetter:
         return gloss
-    elif not gloss.isupper() and not any(char in string.punctuation for char in gloss): return "stem"
-    else:
-        splittedGloss = gloss.split('.')
-        for i in range(0,len(splittedGloss)):
-            splittedGloss[i] = processGloss(splittedGloss[i])
-        return '.'.join(splittedGloss)
+    splittedGloss = gloss.split('.')
+    for i in range(0,len(splittedGloss)):
+        splittedGloss[i] = (splittedGloss[i] if gloss.isupper() else "stem")
+    return '.'.join(splittedGloss)
 
 
 
-if __name__ == "__main__":
-    filepath = "lez-test-track2-uncovered-copy"
-
+def process_morpheme_line(filepath, replaceStems):
     lineList = []                                    #list(list(tupel(word,gloss)))
 
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -33,8 +36,12 @@ if __name__ == "__main__":
                     morpheme = morphemeLineList[j].split('-')
                     gloss = glossLineList[j].split('-')
                     for k in range(0,len(gloss)):
-                        wordList.append((morpheme[k],processGloss(gloss[k])))
+                        if replaceStems:
+                            wordList.append((morpheme[k],processGloss(gloss[k])))
+                        else:
+                            wordList.append((morpheme[k],gloss[k]))
                         if k < len(gloss)-1:
                             wordList.append(("-","-"))
                 lineList.append(wordList)
-    print(lineList)
+
+    return lineList
