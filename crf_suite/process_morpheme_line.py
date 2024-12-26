@@ -1,7 +1,6 @@
 import string
 
 #TODO: question: how about stems with only upper case letters (e.g. FIFA, WHO, TUM, etc.)
-
 #TODO: 
 # what if ",." --> should be "stem,.stem" ?
 def processGloss(gloss):
@@ -18,7 +17,7 @@ def processGloss(gloss):
     return '.'.join(splittedGloss)
 
 
-
+# returns list with mapping for each morpheme to its label in the glossing line
 def process_morpheme_line(filepath, replaceStems):
     lineList = []                                    #list(list(tupel(word,gloss)))
 
