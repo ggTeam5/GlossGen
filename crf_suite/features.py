@@ -1,6 +1,8 @@
 import sklearn_crfsuite
 import process_morpheme_line
 from sklearn_crfsuite import metrics
+import translation_line_crf_most_frequent_labels
+import process_morpheme_line
 
 
 # Feature-Berechnung für CRF
@@ -49,12 +51,12 @@ def sent2tokens(sent):
 
 # Hauptprogramm: Datei einlesen, Features berechnen und CRF trainieren
 if __name__ == "__main__":
-    filepath = "lez-test-track2-uncovered"
-    data = process_morpheme_line.process_morpheme_line(filepath, False) #returns list of tuples
-
-    splitIndex = (int) (0.8*len(data))
-    train_sents = data[0:splitIndex]
-    test_sents = data[splitIndex:]
+    filepathTrain = "lez-train-track2-uncovered"
+    filepathTest = "lez-test-track2-uncovered"
+    train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list of list of tuples
+    test_sents = process_morpheme_line.process_morpheme_line(filepathTest, True) #returns list of list of tuples
+    
+    print("test_sents: ",test_sents)
 
     # Aufteilen der Daten in Features und Labels
     X_train = [sent2features(s) for s in train_sents]
@@ -77,23 +79,44 @@ if __name__ == "__main__":
 
     y_pred = crf.predict(X_test)
 
-    print('y_pred: ',y_pred)
-
-    res = metrics.flat_f1_score(y_test, y_pred,
-                      average='weighted', labels=labels)
+    test_sents2 = process_morpheme_line.process_morpheme_line(filepathTest, False)
     
-    print(res)
+    labelDict = translation_line_crf_most_frequent_labels.most_frequent_label(test_sents2)
 
+    for i in range(len(y_pred)):
+        for j in range(len(y_pred[i])):
+            if "stem" in y_pred[i][j]:
+                (morph,gloss) = test_sents2[i][j]
+                if morph in labelDict:
+                    y_pred[i][j] = labelDict[morph]
+                else:
+                    y_pred[i][j] = "UNK"
+    
+    glossSentList = []
 
+    for i in range(len(y_pred)):
+        resStr = ""
+        j = 0
+        while j < len(y_pred[i]):
+            if y_pred[i][j] == "-":
+                resStr = resStr + y_pred[i][j]
+                if j+1<len(y_pred[i]):
+                    resStr = resStr + y_pred[i][j+1]
+                    j += 2
+                else:
+                    j += 1
+            else:
+                if j != 0:
+                    resStr = resStr + " " + y_pred[i][j]
+                else:
+                    resStr = resStr + y_pred[i][j]
+                j += 1
+        glossSentList.append(resStr)
 
-
-
-
-
-    # # Ausgabe der Ergebnisse
-    # for sent in data:
-    #     tokens = sent2tokens(sent)
-    #     predictions = crf.predict([sent2features(sent)])[0]
-    #     # Formatierung der Ausgabe
-    #     result = [(tokens[i], sent["glosses"][i], predictions[i]) for i in range(len(tokens))]
-    #     print(result)
+with open("lez-prediction.txt","w",encoding='utf-8') as file:
+    for i in range(len(glossSentList)):
+        file.write('\\t'+'\n')
+        file.write('\\m'+'\n')
+        file.write('\\g ' + glossSentList[i]+'\n')
+        file.write('\\l'+'\n')
+        file.write('\n')

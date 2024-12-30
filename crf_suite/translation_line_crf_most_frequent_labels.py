@@ -3,11 +3,11 @@ import process_morpheme_line
 
 # returns dictionary which is mapping every morpheme from the 
 # morpheme lines to its most frequent label over all glossing lines
-def most_frequent_label(filePath):
+def most_frequent_label(morphemeList):
 
     morphemeDict = {}
 
-    morphemeList = process_morpheme_line.process_morpheme_line(filePath,False)
+    # morphemeList = process_morpheme_line.process_morpheme_line(filePath,False)
 
     for i in range (0,len(morphemeList)):
         for (morph,label) in morphemeList[i]:
