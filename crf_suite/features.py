@@ -62,6 +62,7 @@ if __name__ == "__main__":
     print(sys.argv)
     if (len(sys.argv)) != 3:
         print("first argument should be filePathTrain, second argument should be filePathTest")
+        exit(1)
     filepathTrain = sys.argv[1]
     filepathTest = sys.argv[2]
     train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list of list of tuples
