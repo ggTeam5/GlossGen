@@ -3,7 +3,7 @@ import process_morpheme_line
 from sklearn_crfsuite import metrics
 import translation_line_crf_most_frequent_labels
 import process_morpheme_line
-
+import sys
 
 # Feature-Berechnung für CRF
 def word2features(sent, i):
@@ -49,10 +49,21 @@ def sent2tokens(sent):
     return sent["morphs"]
 
 
+#
+def extract_language_name(filepath: str):
+    return filepath.split("-")[0]
+
+
+
 # Hauptprogramm: Datei einlesen, Features berechnen und CRF trainieren
 if __name__ == "__main__":
-    filepathTrain = "lez-train-track2-uncovered"
-    filepathTest = "lez-test-track2-uncovered"
+    # filepathTrain = "lez-train-track2-uncovered"
+    # filepathTest = "lez-test-track2-uncovered"
+    print(sys.argv)
+    if (len(sys.argv)) != 3:
+        print("first argument should be filePathTrain, second argument should be filePathTest")
+    filepathTrain = sys.argv[1]
+    filepathTest = sys.argv[2]
     train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list of list of tuples
     test_sents = process_morpheme_line.process_morpheme_line(filepathTest, True) #returns list of list of tuples
     
@@ -113,7 +124,8 @@ if __name__ == "__main__":
                 j += 1
         glossSentList.append(resStr)
 
-with open("lez-prediction.txt","w",encoding='utf-8') as file:
+outputFilePath = extract_language_name(filepathTest) + "-prediction.txt"
+with open(outputFilePath,"w",encoding='utf-8') as file:
     for i in range(len(glossSentList)):
         file.write('\\t'+'\n')
         file.write('\\m'+'\n')
