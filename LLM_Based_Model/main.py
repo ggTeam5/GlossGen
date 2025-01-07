@@ -22,7 +22,7 @@ def fewshots (shots: int, trainFilepath: str):
     return fewshots.rstrip()
 
 # generate prompt from the test file
-def generageMessages(testFilePath:str, language: str, fewshot_examples: str):
+def generateMessages(testFilePath:str, language: str, fewshot_examples: str):
     transcription = ""
     translation = ""
     messages = []
@@ -49,7 +49,7 @@ trainFilePath = sys.argv[2]
 testFilePath = sys.argv[3]
 
 fewshots = fewshots(3,trainFilePath)
-messages = generageMessages(testFilePath,language,fewshot_examples=fewshots)
+messages = generateMessages(testFilePath,language,fewshot_examples=fewshots)
 print 
 
 
