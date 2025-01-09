@@ -15,7 +15,7 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
     You should gloss each stem/lexical morphemes with its translation in {metalang}, and each gloss gram/functional morphemes with a label indicating its function. Please output the gloss line in the following format:
 
     Glosses: the gloss line for the transcribed text 
-
+    
     Glosses should use all caps lettering for functional morphemes and standard lettering for stem translations. Glosses for morphemes in a word should be separated by dashes, and words should be separated by spaces.
 
     Here are some complete glossed examples:
@@ -26,4 +26,3 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
     Transcription: {transcription}
     Translation: {translation}
     """
-# TODO: change format so that it suits this of the baseline model

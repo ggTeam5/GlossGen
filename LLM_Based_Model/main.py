@@ -3,6 +3,9 @@ import open_AI, prompts, sys
 def printHelp():
     print("Please enter the following command:\tpython3 main.py <language> <trainFilePath> <testFilePath>")
 
+def printFinished(language:str):
+    print("output path: ./"+language+"-output.txt")
+
 # takes first fewshots from the training path
 def fewshots (shots: int, trainFilepath: str):
     fewshots = ""
@@ -36,8 +39,8 @@ def generateMessages(testFilePath:str, language: str, fewshot_examples: str):
                     translation = line.strip("\\l ")
                     prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation)
                     response = open_AI.execute_prompt(prompt)
-                    output.write(response + "\n")
-                    print(response)
+                    if (response.startswith("Glosses: ")):
+                        output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
     return messages
 
 
@@ -51,4 +54,5 @@ testFilePath = sys.argv[3]
 fewshot = fewshots(3,trainFilePath)
 messages = generateMessages(testFilePath,language,fewshot_examples=fewshot)
 
+printFinished(language=language)
 
