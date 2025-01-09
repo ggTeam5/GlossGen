@@ -48,8 +48,8 @@ language = sys.argv[1]
 trainFilePath = sys.argv[2]
 testFilePath = sys.argv[3]
 
-fewshots = fewshots(3,trainFilePath)
-messages = generateMessages(testFilePath,language,fewshot_examples=fewshots)
+fewshot = fewshots(3,trainFilePath)
+messages = generateMessages(testFilePath,language,fewshot_examples=fewshot)
 print 
 
 
