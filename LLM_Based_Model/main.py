@@ -14,7 +14,7 @@ def fewshots (shots: int, trainFilepath: str):
             if line.startswith("\\m "):
                 fewshots += "Transcription: " + line.strip("\\m ") + "\n"
             elif line.startswith("\\g "):
-                fewshots += "Glosses: " + line.strip("\gm ") +"\n"
+                fewshots += "Glosses: " + line.strip("\\g") +"\n"
             elif line.startswith("\\l "):
                 fewshots += "Translation: " + line.strip("\\l ") + "\n"
                 fewshots += "\n"
@@ -50,6 +50,4 @@ testFilePath = sys.argv[3]
 
 fewshot = fewshots(3,trainFilePath)
 messages = generateMessages(testFilePath,language,fewshot_examples=fewshot)
-print 
-
 
