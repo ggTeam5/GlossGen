@@ -12,7 +12,7 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
     Translation: translation of the transcription line in {metalang}
 
     You are to output the gloss line of IGT.
-    You should gloss stem/lexical morphemes with their translation in {metalang}, and gloss gram/functional morphemes with a label indicating their function. Please output the gloss line in the following format:
+    You should gloss each stem/lexical morphemes with its translation in {metalang}, and each gloss gram/functional morphemes with a label indicating its function. Please output the gloss line in the following format:
 
     Glosses: the gloss line for the transcribed text 
 
@@ -26,3 +26,4 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
     Transcription: {transcription}
     Translation: {translation}
     """
+# TODO: change format so that it suits this of the baseline model
