@@ -23,7 +23,7 @@ def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str
                 line = lines[i].strip("\\t ")
                 res = wordRecall(line, testSentence)
                 sentList.append((res,lines[i],lines[i+1],lines[i+2],lines[i+3]))
-        sentList = heapq.nlargest(n,sentList, key=lambda x: x[0])[:n]
+        sentList = heapq.nlargest(n,sentList, key=lambda x: x[0])
         resList = []
         for _,tline,mline,gline,lline in sentList:
             resList.append(tline)
