@@ -8,7 +8,7 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
     Specifically, you will be provided with a line of morphologically segmented text in {language} as well as a translation of the text into {metalang}, in the following format.
     Morphemes are seperated by dashes and words are seperated by spaces.
 
-    Transcription: some morphological segmented text in {language} 
+    Transcription: the morphological segmented transcription line in {language} 
     Translation: translation of the transcription line in {metalang}
 
     You are to output the gloss line of IGT.

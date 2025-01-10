@@ -1,4 +1,4 @@
-import open_AI, prompts, sys
+import open_AI, prompts, sys, sampling
 
 def printHelp():
     print("Please enter the following command:\tpython3 main.py <language> <trainFilePath> <testFilePath>")
@@ -6,26 +6,23 @@ def printHelp():
 def printFinished(language:str):
     print("output path: ./"+language+"-output.txt")
 
-# takes first fewshots from the training path
-def fewshots (shots: int, trainFilepath: str):
+def fewshots (shots: int, exampleTupleList: list):
     fewshots = ""
-    with open (trainFilepath,"r") as f:
-        lines = f.readlines()
-        shot = 0
-        for line in lines:
-            if shot >= shots: break
-            if line.startswith("\\m "):
-                fewshots += "Transcription: " + line.strip("\\m ") + "\n"
-            elif line.startswith("\\g "):
-                fewshots += "Glosses: " + line.strip("\\g ") +"\n"
-            elif line.startswith("\\l "):
-                fewshots += "Translation: " + line.strip("\\l ") + "\n"
-                fewshots += "\n"
-                shot += 1
+    shot = 0
+    for line in exampleTupleList:
+        if shot >= shots: break
+        if line.startswith("\\m "):
+            fewshots += "Transcription: " + line.strip("\\m ") + "\n"
+        elif line.startswith("\\g "):
+            fewshots += "Glosses: " + line.strip("\\g ") +"\n"
+        elif line.startswith("\\l "):
+            fewshots += "Translation: " + line.strip("\\l ") + "\n"
+            fewshots += "\n"
+            shot += 1
     return fewshots.rstrip()
 
 # generate prompt from the test file
-def generateMessages(testFilePath:str, language: str, fewshot_examples: str):
+def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: str):
     transcription = ""
     translation = ""
     messages = []
@@ -37,10 +34,16 @@ def generateMessages(testFilePath:str, language: str, fewshot_examples: str):
                     transcription = line.strip("\\m ")
                 elif line.startswith("\\l "):
                     translation = line.strip("\\l ")
+                    fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
+                    fewshot_examples = fewshots(n, fewshot_examples_list)
                     prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation)
                     response = open_AI.execute_prompt(prompt)
                     if (response.startswith("Glosses: ")):
+                        output.write("\\t\n")
+                        output.write("\\m\n")
                         output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
+                        output.write("\\l\n")
+                        output.write("\n")
     return messages
 
 
@@ -51,8 +54,6 @@ language = sys.argv[1]
 trainFilePath = sys.argv[2]
 testFilePath = sys.argv[3]
 
-fewshot = fewshots(3,trainFilePath)
-messages = generateMessages(testFilePath,language,fewshot_examples=fewshot)
+messages = generateMessages(trainFilePath,3,testFilePath,language)
 
-printFinished(language=language)
-
+printFinished(language)
