@@ -12,8 +12,7 @@ def wordRecall (trainSentence: str, testSentence: str):
     return len(uniqueWords(trainSentence) & uniqueTestWords) / len(uniqueTestWords)
 
 # returns list of tuples. One tuples contains the transcription line, the morphological line, the glossing line and the translation line
-def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str): 
-    elementCount = 0
+def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str):
     sentList = []
     with open(trainFilePath, "r",encoding='utf-8') as file:
         lines = file.readlines()
@@ -21,14 +20,9 @@ def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str
             if lines[i].startswith("\\t "):
                 line = lines[i].strip("\\t ")
                 res = wordRecall(line, testSentence)
-                if elementCount < n:
-                    sentList.append((res,lines[i],lines[i+1],lines[i+2],lines[i+3]))
-                    sentList = sorted(sentList, key=lambda x: x[0])
-                    elementCount += 1
-                elif res > sentList[0][0]:
-                    sentList[0] = (res,lines[i],lines[i+1],lines[i+2],lines[i+3])
-                    sentList = sorted(sentList, key=lambda x: x[0])
-        # print(sentList)
+                sentList.append(res,lines[i],lines[i+1],lines[i+2],lines[i+3])
+        sentList = sorted(sentList, key=lambda x: x[0])
+        sentList = sentList[-n:]
         resList = []
         for _,tline,mline,gline,lline in sentList:
             resList.append(tline)
