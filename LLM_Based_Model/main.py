@@ -1,7 +1,7 @@
 import open_AI, prompts, sys, sampling
 
 def printHelp():
-    print("Please enter the following command:\tpython3 main.py <language> <trainFilePath> <testFilePath>")
+    print("Please enter the following command:\tpython3 main.py <language> <shots> <trainFilePath> <testFilePath>")
 
 def printFinished(language:str):
     print("output path: ./"+language+"-output.txt")
@@ -38,6 +38,7 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                     fewshot_examples = fewshots(n, fewshot_examples_list)
                     prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation)
                     response = open_AI.execute_prompt(prompt)
+                    print(response)
                     if (response.startswith("Glosses: ")):
                         output.write("\\t\n")
                         output.write("\\m\n")
@@ -47,13 +48,14 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
     return messages
 
 
-if len(sys.argv) != 4:
+if len(sys.argv) != 5:
     printHelp()
 
 language = sys.argv[1]
-trainFilePath = sys.argv[2]
-testFilePath = sys.argv[3]
+shots = sys.argv[2]
+trainFilePath = sys.argv[3]
+testFilePath = sys.argv[4]
 
-messages = generateMessages(trainFilePath,3,testFilePath,language)
+messages = generateMessages(trainFilePath,shots,testFilePath,language)
 
 printFinished(language)
