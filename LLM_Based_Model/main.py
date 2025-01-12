@@ -53,6 +53,7 @@ if len(sys.argv) != 5:
 
 language = sys.argv[1]
 shots = sys.argv[2]
+shots = int(shots)
 trainFilePath = sys.argv[3]
 testFilePath = sys.argv[4]
 
