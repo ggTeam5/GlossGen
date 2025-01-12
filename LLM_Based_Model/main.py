@@ -1,4 +1,4 @@
-import open_AI, prompts, sys, sampling
+import open_AI, prompts, sys, sampling, time
 
 def printHelp():
     print("Please enter the following command:\tpython3 main.py <language> <shots> <trainFilePath> <testFilePath>")
@@ -37,6 +37,7 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                     transcription = line.strip("\\t ")
                 elif line.startswith("\\l "):
                     translation = line.strip("\\l ")
+                    time.sleep(1)
                     fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
                     prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
@@ -48,6 +49,7 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                         output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
                         output.write("\\l\n")
                         output.write("\n")
+                        output.flush()
     return messages
 
 
