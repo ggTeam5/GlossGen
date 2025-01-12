@@ -25,18 +25,21 @@ def fewshots (shots: int, exampleTupleList: list):
 def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: str):
     transcription = ""
     translation = ""
+    morpheme_line = ""
     messages = []
     with open (f"{language}-output.txt", "w") as output:
         with open(testFilePath,"r") as testFile:
             testFileLines = testFile.readlines()
             for line in testFileLines:
                 if line.startswith("\\m "):
-                    transcription = line.strip("\\m ")
+                    morpheme_line = line.strip("\\m ")
+                elif line.startswith("\\t "):
+                    transcription = line.strip("\\t ")
                 elif line.startswith("\\l "):
                     translation = line.strip("\\l ")
                     fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
-                    prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation)
+                    prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
                     response = open_AI.execute_prompt(prompt)
                     print(response)
                     if (response.startswith("Glosses: ")):
