@@ -39,10 +39,11 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                     translation = line.strip("\\l ")
                     time.sleep(1)
                     fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
+                    # fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
                     prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
                     response = open_AI.execute_prompt(prompt)
-                    print(response)
+                    print(fewshot_examples)
                     if (response.startswith("Glosses: ")):
                         output.write("\\t\n")
                         output.write("\\m\n")
