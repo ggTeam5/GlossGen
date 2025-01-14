@@ -1,7 +1,7 @@
 import heapq
 import os
 import subprocess
-from chrF.chrFmodified import main
+
 
 def uniqueWords (sentence: str):
     words = sentence.split()
@@ -36,15 +36,14 @@ def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str
     return resList
 
 def chrF(train_sentence_path: str, test_sentence_path: str):
-    # command = ["python3", "chrF/chrF++.py", "-R", test_sentence_path, "-H", train_sentence_path]
-    # print(test_sentence_path, train_sentence_path)
-    # result = subprocess.run(command, capture_output=True, text=True)
-    # print("result = ",result.stderr)
-    # print("result = ",result)
-    # total_f_score = result.stdout.split("\n")[1]
-    # total_f_score = total_f_score.split()[1]
-    f_score = main()
-    return float(f_score)
+    command = ["python3", "chrF/chrF++.py", "-R", test_sentence_path, "-H", train_sentence_path]
+    print(test_sentence_path, train_sentence_path)
+    result = subprocess.run(command, capture_output=True, text=True)
+    print("result = ",result.stderr)
+    print("result = ",result)
+    total_f_score = result.stdout.split("\n")[1]
+    total_f_score = total_f_score.split()[1]
+    return float(total_f_score)
 
 def n_highest_chrF_sentences(n: int, trainFilePath: str, testSentence: str):
     test_sentence_filename = "test-sentence.txt"

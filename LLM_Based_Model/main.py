@@ -38,19 +38,19 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                 elif line.startswith("\\l "):
                     translation = line.strip("\\l ")
                     time.sleep(1)
-                    fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
-                    # fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
+                    # fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
+                    fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
-                    prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
-                    response = open_AI.execute_prompt(prompt)
-                    print(fewshot_examples)
-                    if (response.startswith("Glosses: ")):
-                        output.write("\\t\n")
-                        output.write("\\m\n")
-                        output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
-                        output.write("\\l\n")
-                        output.write("\n")
-                        output.flush()
+                    # prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
+                    # response = open_AI.execute_prompt(prompt)
+                    # print(fewshot_examples)
+                    # if (response.startswith("Glosses: ")):
+                    #     output.write("\\t\n")
+                    #     output.write("\\m\n")
+                    #     output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
+                    #     output.write("\\l\n")
+                    #     output.write("\n")
+                    #     output.flush()
     return messages
 
 
