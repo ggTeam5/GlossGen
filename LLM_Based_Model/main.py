@@ -13,13 +13,13 @@ def fewshots (shots: int, exampleTupleList: list):
     for line in exampleTupleList:
         if shot >= shots: break
         if line.startswith("\\t"):
-            fewshots+= "Transcription: " + line.strip("\\t ") + "\n"
+            fewshots+= "Transcription: " + line.replace("\\t ","") + "\n"
             # fewshots+= line 
         if line.startswith("\\m "):
-            fewshots += "Morphemes: " + line.strip("\\m ") + "\n"
+            fewshots += "Morphemes: " + line.replace("\\m ","") + "\n"
             # fewshots += line
         elif line.startswith("\\g "):
-            fewshots += "Glosses: " + line.strip("\\g ") +"\n"
+            fewshots += "Glosses: " + line.replace("\\g ","") +"\n"
             # fewshots += line 
             fewshots += "\n"
             shot += 1
@@ -35,31 +35,34 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
     translation = ""
     morpheme_line = ""
     messages = []
-    with open (f"{language}-output.txt", "w") as output:
+    with open (f"{language}-{n}-shots.txt", "w") as output:
         with open(testFilePath,"r") as testFile:
             testFileLines = testFile.readlines()
             for line in testFileLines:
                 if line.startswith("\\m "):
-                    morpheme_line = line.strip("\\m ").rstrip()
+                    morpheme_line = line.replace("\\m ","").rstrip()
                 elif line.startswith("\\t "):
-                    transcription = line.strip("\\t ").rstrip()
+                    transcription = line.replace("\\t ","").rstrip()
                 elif line.startswith("\\l "):
-                    translation = line.strip("\\l ").rstrip()
+                    translation = line.replace("\\l ","").rstrip()
                     time.sleep(4)
                     fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
                     # fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
                     prompt = prompts.generate_prompt_modified(language,"English", fewshot_examples,transcription,translation,morpheme_line)
+                    print(prompt)
                     # print(prompt)
                     response = gemini_api.ask_gemini(prompt)
                     # prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
                     # response = open_AI.execute_prompt(prompt)
-                    # print(fewshot_examples)
+                    print(response)
                     # if (response.startswith("Glosses: ")):
                     if (response.startswith("Glosses: ")):
                         output.write("\\t\n")
                         output.write("\\m\n")
-                        output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
+                        glosses = response.replace("Glosses: ","").rstrip()
+                        print(glosses)
+                        output.write("\\g " + glosses+ "\n")
                         # output.write(response )
                         output.write("\\l\n")
                         output.write("\n")
