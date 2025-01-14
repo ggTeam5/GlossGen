@@ -1,4 +1,5 @@
-import open_AI, prompts, sys, sampling, time
+# import open_AI
+import prompts, sys, sampling, time, gemini_api
 
 def printHelp():
     print("Please enter the following command:\tpython3 main.py <language> <shots> <trainFilePath> <testFilePath>")
@@ -11,14 +12,21 @@ def fewshots (shots: int, exampleTupleList: list):
     shot = 0
     for line in exampleTupleList:
         if shot >= shots: break
+        if line.startswith("\\t"):
+            fewshots+= "Transcription: " + line.strip("\\t ") + "\n"
+            # fewshots+= line 
         if line.startswith("\\m "):
-            fewshots += "Transcription: " + line.strip("\\m ") + "\n"
+            fewshots += "Morphemes: " + line.strip("\\m ") + "\n"
+            # fewshots += line
         elif line.startswith("\\g "):
             fewshots += "Glosses: " + line.strip("\\g ") +"\n"
-        elif line.startswith("\\l "):
-            fewshots += "Translation: " + line.strip("\\l ") + "\n"
+            # fewshots += line 
             fewshots += "\n"
             shot += 1
+        # elif line.startswith("\\l "):
+        #     # fewshots += "Translation: " + line.strip("\\l ") + "\n"
+        #     fewshots += "\n"
+        #     shot += 1
     return fewshots.rstrip()
 
 # generate prompt from the test file
@@ -32,25 +40,30 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
             testFileLines = testFile.readlines()
             for line in testFileLines:
                 if line.startswith("\\m "):
-                    morpheme_line = line.strip("\\m ")
+                    morpheme_line = line.strip("\\m ").rstrip()
                 elif line.startswith("\\t "):
-                    transcription = line.strip("\\t ")
+                    transcription = line.strip("\\t ").rstrip()
                 elif line.startswith("\\l "):
-                    translation = line.strip("\\l ")
-                    time.sleep(1)
-                    # fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
-                    fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
+                    translation = line.strip("\\l ").rstrip()
+                    time.sleep(4)
+                    fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
+                    # fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
                     fewshot_examples = fewshots(n, fewshot_examples_list)
+                    prompt = prompts.generate_prompt_modified(language,"English", fewshot_examples,transcription,translation,morpheme_line)
+                    # print(prompt)
+                    response = gemini_api.ask_gemini(prompt)
                     # prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
                     # response = open_AI.execute_prompt(prompt)
                     # print(fewshot_examples)
                     # if (response.startswith("Glosses: ")):
-                    #     output.write("\\t\n")
-                    #     output.write("\\m\n")
-                    #     output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
-                    #     output.write("\\l\n")
-                    #     output.write("\n")
-                    #     output.flush()
+                    if (response.startswith("Glosses: ")):
+                        output.write("\\t\n")
+                        output.write("\\m\n")
+                        output.write("\\g " + response.strip("Glosses: ").rstrip() + "\n")
+                        # output.write(response )
+                        output.write("\\l\n")
+                        output.write("\n")
+                        output.flush()
     return messages
 
 
