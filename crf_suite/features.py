@@ -65,19 +65,18 @@ if __name__ == "__main__":
         exit(1)
     filepathTrain = sys.argv[1]
     filepathTest = sys.argv[2]
-    train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list of list of tuples
-    test_sents = process_morpheme_line.process_morpheme_line(filepathTest, True) #returns list of list of tuples
+    train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list(list(tupel(morph,gloss)))
+    test_sents = process_morpheme_line.process_morpheme_line(filepathTest, True)   #returns list(list(tupel(morph,gloss)))
     
     print("test_sents: ",test_sents)
 
-    # Aufteilen der Daten in Features und Labels
+    # separate data in features and labels
     X_train = [sent2features(s) for s in train_sents]
     y_train = [sent2labels(s) for s in train_sents]
 
     X_test = [sent2features(s) for s in test_sents]
-    y_test = [sent2labels(s) for s in test_sents]
 
-    # CRF-Modell trainieren
+    # train CRF model
     crf = sklearn_crfsuite.CRF(
         algorithm='lbfgs',
         c1=0.1,
@@ -87,14 +86,13 @@ if __name__ == "__main__":
     )
     crf.fit(X_train, y_train)
 
-    labels = list(crf.classes_)
-
     y_pred = crf.predict(X_test)
 
     test_sents2 = process_morpheme_line.process_morpheme_line(filepathTest, False)
     
     labelDict = translation_line_crf_most_frequent_labels.most_frequent_label(test_sents2)
 
+    # replace "stem" in y_pred by the corresponding label/ gloss from the labelDict or with "UNK" if gloss is not in labelDict
     for i in range(len(y_pred)):
         for j in range(len(y_pred[i])):
             if "stem" in y_pred[i][j]:
@@ -104,8 +102,8 @@ if __name__ == "__main__":
                 else:
                     y_pred[i][j] = "UNK"
     
+    # merge glosses from y_pred to sentence --> glossSentList is a list of predicted gloss sentences
     glossSentList = []
-
     for i in range(len(y_pred)):
         resStr = ""
         j = 0
@@ -125,11 +123,11 @@ if __name__ == "__main__":
                 j += 1
         glossSentList.append(resStr)
 
-outputFilePath = extract_language_name(filepathTest) + "-prediction.txt"
-with open(outputFilePath,"w",encoding='utf-8') as file:
-    for i in range(len(glossSentList)):
-        file.write('\\t'+'\n')
-        file.write('\\m'+'\n')
-        file.write('\\g ' + glossSentList[i]+'\n')
-        file.write('\\l'+'\n')
-        file.write('\n')
+    outputFilePath = extract_language_name(filepathTest) + "-prediction.txt"
+    with open(outputFilePath,"w",encoding='utf-8') as file:
+        for i in range(len(glossSentList)):
+            file.write('\\t'+'\n')
+            file.write('\\m'+'\n')
+            file.write('\\g ' + glossSentList[i]+'\n')
+            file.write('\\l'+'\n')
+            file.write('\n')
