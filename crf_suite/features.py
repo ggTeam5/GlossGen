@@ -66,9 +66,9 @@ if __name__ == "__main__":
     filepathTrain = sys.argv[1]
     filepathTest = sys.argv[2]
     train_sents = process_morpheme_line.process_morpheme_line(filepathTrain, True) #returns list(list(tupel(morph,gloss)))
-    test_sents = process_morpheme_line.process_morpheme_line(filepathTest, True)   #returns list(list(tupel(morph,gloss)))
+    test_sents = process_morpheme_line.process_morpheme_line(filepathTest, False)   #for test_sents: the bool value is not relevant
     
-    print("test_sents: ",test_sents)
+    # print("test_sents: ",test_sents)
 
     # separate data in features and labels
     X_train = [sent2features(s) for s in train_sents]
@@ -88,15 +88,15 @@ if __name__ == "__main__":
 
     y_pred = crf.predict(X_test)
 
-    test_sents2 = process_morpheme_line.process_morpheme_line(filepathTest, False)
+    train_sents2 = process_morpheme_line.process_morpheme_line(filepathTrain, False)
     
-    labelDict = translation_line_crf_most_frequent_labels.most_frequent_label(test_sents2)
+    labelDict = translation_line_crf_most_frequent_labels.most_frequent_label(train_sents2)
 
     # replace "stem" in y_pred by the corresponding label/ gloss from the labelDict or with "UNK" if gloss is not in labelDict
     for i in range(len(y_pred)):
         for j in range(len(y_pred[i])):
             if "stem" in y_pred[i][j]:
-                (morph,gloss) = test_sents2[i][j]
+                (morph,_) = test_sents[i][j]
                 if morph in labelDict:
                     y_pred[i][j] = labelDict[morph]
                 else:
