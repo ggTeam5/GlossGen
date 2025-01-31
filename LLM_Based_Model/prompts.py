@@ -29,25 +29,27 @@ def generate_prompt (language: str, metalang: str, fewshot_examples: str, transc
 
 
 def generate_prompt_modified (language: str, metalang: str, fewshot_examples: str, transcription: str, translation: str, morpheme_line: str):
-    prompt = f"""Each Morpheme in a word separated by dashes, each word seperated by a space character (dog-s is a word; dog and s are morphemes)
-Use Leipzig Glossing Convention
-Keep spaces of transcription in glosses
-unknown glosses should be glossed as UNK 
-Interlinear Glossing Text (IGT) line has 3 lines
+    return f"""Interlinear Glossing Text (IGT) line in {language} contains the lines:
 
-Transcription: Transcription line in {language} 
-Morphemes: Morpheme-segmented transcription
-Glosses: Morpheme-by-morpheme glosses (Leipzig Glossing Convention)
+\m Morpheme line: Morpheme-segmented sentence
+\g Gloss line: Morpheme-by-morpheme glosses
 
-Exammples:
+### Formatting Details:
+1. **Morpheme line**: The segmented into words by space. The Words are then segmented into morphemes using "-". Other characters are not used for morpheme segmentation.
+2. **Gloss line**: Each morpheme is glossed with exactly one label using Leipzig Glossing Rules. 
+   - Lexical morphemes in Morpheme line are glossed with a lexical label in English.
+   - Functional morphemes are glossed with a functional label.
+   - Unknown glosses are marked as "UNK".
+3. **Alignment Rule**: Each gloss on the "\g" line must directly correspond to the morpheme in the morpheme line it glosses, in the same order as the morpheme line. 
+
+### Example:
 
 {fewshot_examples}
 
-Return morpheme-by-morpheme glosses for this IGT line:
-start glossline with "Glosses: "
-Transcription: {transcription}
-Morphemes: {morpheme_line}
-"""
-    return prompt
+---
+
+Provide the morpheme-by-morpheme glosses for this IGT line (start with "\g") using Leipzip Glossing Rules:
+
+\m {morpheme_line}"""
 
    
