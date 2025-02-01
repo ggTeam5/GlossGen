@@ -1,5 +1,6 @@
 # import open_AI
 import prompts, sys, sampling, time, gemini_api
+import google.generativeai as genai
 
 def printHelp():
     print("Please enter the following command:\tpython3 main.py <language> <shots> <trainFilePath> <testFilePath>")
@@ -61,6 +62,35 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                         output.flush()
     return messages
 
+def gemini_fine_tuned(trainFilePath: str, n: int, testFilePath: str, language: str):
+    transcription = ""
+    translation = ""
+    morpheme_line = ""
+    model = genai.GenerativeModel(model_name="projects/457153199170/locations/us-east1/endpoints/7571971542632890368")
+    messages = []
+    with open (f"{language}-{n}-shots-Gemini-WordRecall.txt", "w") as output:
+        with open(testFilePath,"r") as testFile:
+            testFileLines = testFile.readlines()
+            for line in testFileLines:
+                if line.startswith("\\t "):
+                    transcription = line.replace("\\t ","").rstrip()
+                elif line.startswith("\m "):
+                    morpheme_line = line.replace("\\m ","").rstrip()
+                    time.sleep(4) # 15 sentences processed per minute (resource limit)
+                    prompt = prompts.generate_prompt_fine_tuned(language,"English", "",transcription,translation,morpheme_line)
+                    response = model.generate_content(prompt)
+                    print(response.text) 
+
+                    # if (response.startswith("Glosses: ")):
+                    if (response.startswith("\g")):
+                        output.write("\\t\n")
+                        output.write("\\m\n")
+                        response = response.rstrip()
+                        output.write(response + "\n")
+                        output.write("\\l\n")
+                        output.write("\n")
+                        output.flush()
+    return messages
 
 if len(sys.argv) != 5:
     printHelp()
@@ -71,6 +101,6 @@ shots = int(shots)
 trainFilePath = sys.argv[3]
 testFilePath = sys.argv[4]
 
-messages = generateMessages(trainFilePath,shots,testFilePath,language)
+messages = gemini_fine_tuned(trainFilePath,shots,testFilePath,language)
 
 printFinished(language)

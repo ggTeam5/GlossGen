@@ -52,4 +52,22 @@ Provide the morpheme-by-morpheme glosses for this IGT line (start with "\g") usi
 
 \m {morpheme_line}"""
 
+def generate_prompt_fine_tuned (language: str, metalang: str, fewshot_examples: str, transcription: str, translation: str, morpheme_line: str):
+    return f"""Interlinear Glossing Text (IGT) line in {language} contains the lines:
+
+\m Morpheme line: Morpheme-segmented sentence
+\g Gloss line: Morpheme-by-morpheme glosses
+
+### Formatting Details:
+1. **Morpheme line**: The segmented into words by space. The Words are then segmented into morphemes using "-". Other characters are not used for morpheme segmentation.
+2. **Gloss line**: Each morpheme is glossed with exactly one label using Leipzig Glossing Rules. 
+   - Lexical morphemes in Morpheme line are glossed with a lexical label in English.
+   - Functional morphemes are glossed with a functional label.
+   - Unknown glosses are marked as "UNK".
+3. **Alignment Rule**: Each gloss on the "\g" line must directly correspond to the morpheme in the morpheme line it glosses, in the same order as the morpheme line. 
+
+Provide the morpheme-by-morpheme glosses for this IGT line (start with "\g") using Leipzip Glossing Rules:
+
+\m {morpheme_line}"""
+
    

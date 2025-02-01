@@ -25,14 +25,13 @@ def n_highest_wordRecall_sentences(n: int, trainFilePath: str, testSentence: str
             if lines[i].startswith("\\t "):
                 line = lines[i].strip("\\t ")
                 res = wordRecall(line, testSentence)
-                sentList.append((res,lines[i],lines[i+1],lines[i+2],lines[i+3]))
+                sentList.append((res,lines[i],lines[i+1],lines[i+2]))
         sentList = heapq.nlargest(n,sentList, key=lambda x: x[0])
         resList = []
-        for _,tline,mline,gline,lline in sentList:
+        for _,tline,mline,gline in sentList:
             resList.append(tline)
             resList.append(mline)
             resList.append(gline)
-            resList.append(lline)
     return resList
 
 def chrF(train_sentence_path: str, test_sentence_path: str):
