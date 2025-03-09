@@ -18,9 +18,9 @@ Interlinear Glossed Text (IGT) is a format used in language documentation. An IG
 
 ```
 (Transcription) \t Way 'nithl wildiit.
-(Morphemes)    \m way 'nit-hl wil-diit 
-(Glossing)     \g so 3.III-CN LVB-3PL.II 
-(Translation)  \t And that's what they did. 
+(Morphemes)     \m way 'nit-hl wil-diit 
+(Glossing)      \g so 3.III-CN LVB-3PL.II 
+(Translation)   \t And that's what they did. 
 ```
 **Figure 1**: Example IGT line for Gitksan language (Ginn et al., 2023).
 
