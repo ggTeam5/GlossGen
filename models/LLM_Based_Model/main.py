@@ -62,11 +62,10 @@ def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: st
                         output.flush()
     return messages
 
-def gemini_fine_tuned(trainFilePath: str, n: int, testFilePath: str, language: str):
+def generateMessages(trainFilePath: str, n: int, testFilePath: str, language: str):
     transcription = ""
     translation = ""
     morpheme_line = ""
-    model = genai.GenerativeModel(model_name="projects/457153199170/locations/us-east1/endpoints/7571971542632890368")
     messages = []
     with open (f"{language}-{n}-shots-Gemini-WordRecall.txt", "w") as output:
         with open(testFilePath,"r") as testFile:
@@ -76,10 +75,19 @@ def gemini_fine_tuned(trainFilePath: str, n: int, testFilePath: str, language: s
                     transcription = line.replace("\\t ","").rstrip()
                 elif line.startswith("\m "):
                     morpheme_line = line.replace("\\m ","").rstrip()
+                # elif line.startswith("\l "):
+                    # translation = line.replace("\\l ","").rstrip()
                     time.sleep(4) # 15 sentences processed per minute (resource limit)
-                    prompt = prompts.generate_prompt_fine_tuned(language,"English", "",transcription,translation,morpheme_line)
-                    response = model.generate_content(prompt)
-                    print(response.text) 
+                    fewshot_examples_list = sampling.n_highest_wordRecall_sentences(n,trainFilePath,transcription)
+                    # fewshot_examples_list = sampling.n_highest_chrF_sentences(n,trainFilePath,transcription)
+                    fewshot_examples = fewshots(n, fewshot_examples_list)
+                    prompt = prompts.generate_prompt_modified(language,"English", fewshot_examples,transcription,translation,morpheme_line)
+                    print(prompt)
+                    # print(prompt)
+                    response = gemini_api.ask_gemini(prompt)
+                    print(response)
+                    # prompt = prompts.generate_prompt(language,"English", fewshot_examples,transcription,translation,morpheme_line)
+                    # response = open_AI.execute_prompt(prompt)
 
                     # if (response.startswith("Glosses: ")):
                     if (response.startswith("\g")):
@@ -101,6 +109,6 @@ shots = int(shots)
 trainFilePath = sys.argv[3]
 testFilePath = sys.argv[4]
 
-messages = gemini_fine_tuned(trainFilePath,shots,testFilePath,language)
+messages = generateMessages(trainFilePath,shots,testFilePath,language)
 
 printFinished(language)

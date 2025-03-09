@@ -35,7 +35,7 @@ def generate_prompt_modified (language: str, metalang: str, fewshot_examples: st
 \g Gloss line: Morpheme-by-morpheme glosses
 
 ### Formatting Details:
-1. **Morpheme line**: The segmented into words by space. The Words are then segmented into morphemes using "-". Other characters are not used for morpheme segmentation.
+1. **Morpheme line**: The segmented into words by space. The words are then segmented into morphemes using "-". Other characters are not used for morpheme segmentation.
 2. **Gloss line**: Each morpheme is glossed with exactly one label using Leipzig Glossing Rules. 
    - Lexical morphemes in Morpheme line are glossed with a lexical label in English.
    - Functional morphemes are glossed with a functional label.
