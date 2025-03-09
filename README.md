@@ -25,7 +25,7 @@ Interlinear Glossed Text (IGT) is a format used in language documentation. An IG
 **Figure 1**: Example IGT line for Gitksan language (Ginn et al., 2023).
 
 ## Models
-The models used are based on transformers, Conditional Random Field (CRF) and the Large Language Model (LLM) Google Gemini (see: folder models). We executed the transformer-based trained models provided by Ginn (2023). Additionally, the transformer-based prediction was post-processed (for Lezgi language only), see: `models/transformers/`. We implemented the other two models (see: `models/`). The prediction of each model is provided in `predictions/`.
+The models used are based on transformers, Conditional Random Field (CRF) and the Large Language Model (LLM) Google Gemini (see: folder `models`). We executed the transformer-based trained models provided by Ginn (2023). Additionally, the transformer-based prediction was post-processed (for Lezgi language only), see: `models/transformers/`. Our implementation of the other two models can be accessed in folder `models/`. The prediction of each model is provided in `predictions/`.
 
 ## Evaluation
 We used the evaluation code provided by Ginn (2023).
