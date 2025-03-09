@@ -3,10 +3,7 @@ In context of our Bachelor's Practical Course "Natural Language Processing", we 
 
 ## Abstract
 Interlinear glossing provides a description of
-each morpheme in a sentence and is a crucial part of language documentation. We compare three different approaches of automatic
-gloss generation, focusing on low-resource languages. The glossing line analyzes the grammatical structure as well as the meaning of a
-sentence with respect to each morpheme. We compare a transformer-based, a CRF-based and a LLM-based model in terms of accuracy and output patterns to determine their strengths and weaknesses. We achieved considerable accuracy compared to Ginn et al. (2023), especially in Lezgi and Gitksan using Conditional Random Fields. In addition, we found that the transformer-based model improves with larger
-training datasets.
+each morpheme in a sentence and is a crucial part of language documentation. The glossing line analyzes the grammatical structure as well as the meaning of a sentence with respect to each morpheme. We compare a transformer-based, a CRF-based and a LLM-based model in terms of accuracy and output patterns to determine their strengths and weaknesses. We achieved considerable accuracy compared to Ginn et al. (2023), especially in Lezgi and Gitksan using Conditional Random Fields. In addition, we found that the transformer-based model improves with larger training datasets.
 
 ## Data
 The data we used originated from low-resource
