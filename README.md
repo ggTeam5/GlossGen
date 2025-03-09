@@ -17,10 +17,10 @@ Mainly, we used Gitksan, Lezgi and Tsez.
 Interlinear Glossed Text (IGT) is a format used in language documentation. An IGT line (Figure 1) consists of a source sentence from a low-resource language "\t", its morphological segmentation "\m", the translation of that sentence "\l" into a matrix language (here, English)and the output "\g", which consists of the glosses for each source morpheme.
 
 ```
-**Transcription** \t Way 'nithl wildiit.
-**Morphemes**    \m way 'nit-hl wil-diit 
-**Glossing**     \g so 3.III-CN LVB-3PL.II 
-**Translation**  \t And that's what they did. 
+(Transcription) \t Way 'nithl wildiit.
+(Morphemes)    \m way 'nit-hl wil-diit 
+(Glossing)     \g so 3.III-CN LVB-3PL.II 
+(Translation)  \t And that's what they did. 
 ```
 **Figure 1**: Example IGT line for Gitksan language (Ginn et al., 2023).
 
